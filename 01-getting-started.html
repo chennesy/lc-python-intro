@@ -157,8 +157,7 @@
         
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#use-the-spyder-ide-for-editing-and-running-python.">Use the Spyder IDE for editing and running Python.</a></li>
-<li><a href="#different-ways-of-interacting-with-python-using-spyder">Different ways of interacting with Python using Spyder</a></li>
+        <ul><li><a href="#use-jupyterlab-to-edit-and-run-python-code.">Use JupyterLab to edit and run Python code.</a></li>
 <li><a href="#python-in-the-console">Python in the console</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -247,42 +246,6 @@
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
-<div class="accordion accordion-flush" id="accordionFlush12">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading12">
-        <a href="15-scope.html">11. Variable Scope</a>
-    </div><!--/div.accordion-header-->
-        
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush13">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading13">
-        <a href="17-conditionals.html">12. Conditionals</a>
-    </div><!--/div.accordion-header-->
-        
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush14">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading14">
-        <a href="18-style.html">13. Programming Style</a>
-    </div><!--/div.accordion-header-->
-        
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush15">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading15">
-        <a href="20-feedback.html">14. Feedback</a>
-    </div><!--/div.accordion-header-->
-        
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
                 </div>
               </div>
             </div>
@@ -360,8 +323,8 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>How do I use the Spyder IDE?</li>
-<li>How can I run Python programs?</li>
+<ul><li>How do I use JupyterLab?</li>
+<li>How can I run Python code in JupyterLab?</li>
 </ul></div>
 </div>
 </div>
@@ -369,54 +332,75 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Learners can launch the Spyder IDE</li>
-<li>Learners are able to use the IPython console to interact with
-Python</li>
-<li>Learners are able to write code in the Spyder editor and run this
-code</li>
-<li>Learners are able to save their code in a *.py file</li>
-<li>Learners can use the different buttons and panels needed in the
-Spyder IDE</li>
+<ul><li>Learners can launch JupyterLab</li>
+<li>Learners are able to use the Jupyter Lab interface</li>
+<li>Learners are able to write and run Python code in JupyterLab</li>
+<li>Learners are able to save their code as an iPython notebook (.ipynb)
+file</li>
+<li>Learners can use the different buttons and features in
+JupyterLab</li>
 </ul></div>
 </div>
 </div>
 </div>
 </div>
-<section id="use-the-spyder-ide-for-editing-and-running-python."><h2 class="section-heading">Use the Spyder IDE for editing and running Python.<a class="anchor" aria-label="anchor" href="#use-the-spyder-ide-for-editing-and-running-python."></a>
+<section id="use-jupyterlab-to-edit-and-run-python-code."><h2 class="section-heading">Use JupyterLab to edit and run Python code.<a class="anchor" aria-label="anchor" href="#use-jupyterlab-to-edit-and-run-python-code."></a>
 </h2>
-<hr class="half-width"><ul><li>
-<p>The <a href="https://docs.anaconda.com/anaconda/install/" class="external-link">Anaconda package
-manager</a> is an automated way to install the <a href="https://www.spyder-ide.org/" class="external-link">Spyder IDE</a>.</p>
-<ul><li>See <a href="index.html#setup">the setup instructions</a> for Anaconda
-installation instructions.</li>
-</ul></li>
-<li><p>It also installs all the extra libraries it needs to
-run.</p></li>
-<li>
-<p>Once you have installed Python and the Spyder IDE requirements,
-open a shell and type:</p>
+<hr class="half-width"><p>If you haven’t already done so, see <a href="index.html#setup">the setup
+instructions</a> for details on how to install JupyterLab and Python via
+Anaconda. The setup instructions also walk you through the steps you
+should follow to create an ‘lc-python’ folder on your Desktop, and to
+download and unzip the dataset we’ll be working with inside of that
+directory.</p>
+<div class="section level3">
+<h3 id="start-jupyterlab">Start JupyterLab<a class="anchor" aria-label="anchor" href="#start-jupyterlab"></a></h3>
+<p>Once you have created the ‘lc-python’ directory on your Desktop, you
+can start JupyterLab by opening a shell (Terminal on Mac or Git Bash for
+Windows), navigating to your <code>lc-python</code> folder, and typing
+‘jupyter lab’ on the command line.</p>
 <div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>$ spyder</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd Desktop/lc-python</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> jupyter lab</span></code></pre>
 </div>
-</li>
-<li><p>This will start The Spyder IDE.</p></li>
-<li><p>This environment has several useful tools we can use, which you
-can see in different panels in the Spyder IDE. We will look into some of
-them.</p></li>
-<li><p>You can change the positions and sizes of these panels to your
-preference, as you get to know them.</p></li>
-</ul></section><section id="different-ways-of-interacting-with-python-using-spyder"><h2 class="section-heading">Different ways of interacting with Python using Spyder<a class="anchor" aria-label="anchor" href="#different-ways-of-interacting-with-python-using-spyder"></a>
-</h2>
-<hr class="half-width"><ul><li>On the left, filling half of the screen is the editor. Here you can
-write and edit code, which can then be saved in a file (usually with a
-.py extension). We can run the code we wrote here by pressing the green
-‘play’ button on top or press F5 on your keyboard.</li>
-<li>On the bottom right, we find the IPython console. This is were we
-can talk directly to Python. It will interpret what you have typed
-directly when you press Enter.</li>
-</ul></section><section id="python-in-the-console"><h2 class="section-heading">Python in the console<a class="anchor" aria-label="anchor" href="#python-in-the-console"></a>
+<p>If you are unfamiliar with the command line, you can also launch
+JupyterLab by opening the Anaconda Navigator app and choosing the
+“Launch” button underneath the JuypterLab icon. If you launch Jupyterlab
+from Anaconda you’ll need to navigate the directory of folders visible
+in the left-hand column of the JupyterLab display to find your
+‘lc-python’ folder.</p>
+</div>
+<div class="section level3">
+<h3 id="a-first-look-at-jupyterlab">A first look at JupyterLab<a class="anchor" aria-label="anchor" href="#a-first-look-at-jupyterlab"></a></h3>
+<p>Launching JupyterLab should open a new tab or window in your
+preferred web browser. While JupyterLab enables you to run code from
+your browser, it does not require you to be online. If you take a look
+at the URL in your browser address bar, you should see that the
+environment is located at your localhost, meaning it is running from
+your computer and not connecting to a URL that is online:
+<code>http://localhost:8888/lab</code>.</p>
+<p>When you first open JupyterLab you should see two main panels. In the
+left sidebar there is a file browser. You should see a folder in the
+file browser named ‘lc-python-circ’ that contains all of our data. If
+you double-clock on that folder, you will see a list of the CSV files
+we’ll be working with. To get back to the working directory, choose the
+folder icon just above file browser pane.</p>
+<p>To the right you will initially see a Launcher tab. Here we have
+options to launch a Python 3 notebook, a Terminal (where we can use
+shell commands), text files, and other filetypes. For now, we want to
+launch a new Python 3 notebook, so click once on the ‘Python 3
+(ipykernel)’ button underneath the Notebook header.</p>
+<p>Now you should see a new tab that is called Untitled.ipynb. You
+should also see it listed in the file browser to the left. Go ahead and
+right-click on the Untitled.ipynb file in the left hand panel and choose
+‘Rename’ from the dropdown options. Let’s call the notebook file,
+‘workshop.ipynb.’</p>
+</div>
+<div class="section level3">
+<h3 id="running-python-code">Running Python code<a class="anchor" aria-label="anchor" href="#running-python-code"></a></h3>
+</div>
+</section><section id="python-in-the-console"><h2 class="section-heading">Python in the console<a class="anchor" aria-label="anchor" href="#python-in-the-console"></a>
 </h2>
 <hr class="half-width"><div id="challenge1" class="callout challenge">
 <div class="callout-square">
@@ -444,7 +428,7 @@ following calculation and press enter?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Python returns the result of the calculation.</p>
 <div class="codewrapper sourceCode" id="cb3">
@@ -490,7 +474,7 @@ happens?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>In the IPython console Python tells you which files it ran and the
 result of this run</p>

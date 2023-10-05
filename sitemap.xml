@@ -13,40 +13,31 @@
     <loc>https://librarycarpentry.github.io/lc-python-intro/04-built-in.html</loc>
   </url>
   <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/05-coffee.html</loc>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/05-libraries.html</loc>
   </url>
   <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/06-libraries.html</loc>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/06-pandas.html</loc>
   </url>
   <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/10-lunch.html</loc>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/07-for-loops.html</loc>
   </url>
   <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/11-lists.html</loc>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/08-looping-data-sets.html</loc>
   </url>
   <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/12-for-loops.html</loc>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/09-writing-functions.html</loc>
   </url>
   <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/13-looping-data-sets.html</loc>
-  </url>
-  <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/14-writing-functions.html</loc>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/10-wrap.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/15-scope.html</loc>
-  </url>
-  <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/16-coffee.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/17-conditionals.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/18-style.html</loc>
-  </url>
-  <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/19-wrap.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/20-feedback.html</loc>
@@ -61,9 +52,6 @@
     <loc>https://librarycarpentry.github.io/lc-python-intro/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/aio.html</loc>
-  </url>
-  <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/design.html</loc>
   </url>
   <url>
@@ -71,9 +59,6 @@
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/exercises.html</loc>
-  </url>
-  <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/images.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/index.html</loc>
@@ -91,40 +76,31 @@
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/04-built-in.html</loc>
   </url>
   <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/05-coffee.html</loc>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/05-libraries.html</loc>
   </url>
   <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/06-libraries.html</loc>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/06-pandas.html</loc>
   </url>
   <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/10-lunch.html</loc>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/07-for-loops.html</loc>
   </url>
   <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/11-lists.html</loc>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/08-looping-data-sets.html</loc>
   </url>
   <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/12-for-loops.html</loc>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/09-writing-functions.html</loc>
   </url>
   <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/13-looping-data-sets.html</loc>
-  </url>
-  <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/14-writing-functions.html</loc>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/10-wrap.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/15-scope.html</loc>
-  </url>
-  <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/16-coffee.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/17-conditionals.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/18-style.html</loc>
-  </url>
-  <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/19-wrap.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/20-feedback.html</loc>
@@ -139,9 +115,6 @@
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/aio.html</loc>
-  </url>
-  <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/design.html</loc>
   </url>
   <url>
@@ -151,28 +124,13 @@
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/exercises.html</loc>
   </url>
   <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/images.html</loc>
-  </url>
-  <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/index.html</loc>
-  </url>
-  <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/instructor-notes.html</loc>
-  </url>
-  <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/profiles.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/reference.html</loc>
-  </url>
-  <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor-notes.html</loc>
-  </url>
-  <url>
-    <loc>https://librarycarpentry.github.io/lc-python-intro/key-points.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/profiles.html</loc>

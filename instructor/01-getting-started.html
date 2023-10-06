@@ -158,6 +158,8 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#use-jupyterlab-to-edit-and-run-python-code.">Use JupyterLab to edit and run Python code.</a></li>
+<li><a href="#getting-started-with-jupyterlab">Getting started with JupyterLab</a></li>
+<li><a href="#start-jupyterlab">Start JupyterLab</a></li>
 <li><a href="#python-in-the-console">Python in the console</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -204,7 +206,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="06-pandas.html">6. pandas</a>
+        <a href="06-pandas.html">6. Libraries &amp; Pandas</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -304,7 +306,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Getting Started</h1>
-        <p> Last updated on 2023-10-05 | 
+        <p> Last updated on 2023-10-06 | 
         
         <a href="https://github.com/librarycarpentry/lc-python-intro/edit/main/episodes/01-getting-started.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -334,13 +336,11 @@
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Learners can launch JupyterLab</li>
-<li>Learners are able to use the Jupyter Lab interface</li>
-<li>Learners are able to write and run Python code in JupyterLab</li>
-<li>Learners are able to save their code as an iPython notebook (.ipynb)
-file</li>
-<li>Learners can use the different buttons and features in
-JupyterLab</li>
+<ul><li>Learners can launch JupyterLab and create a Jupyter Notebook.</li>
+<li>Learners are able to navigate the JupyterLab interface</li>
+<li>Learners are able to write and run Python cells in a notebook</li>
+<li>Learners are able to save their code as an iPython notebook (.ipynb
+file)</li>
 </ul></div>
 </div>
 </div>
@@ -351,53 +351,109 @@ JupyterLab</li>
 <hr class="half-width"><p>If you haven’t already done so, see <a href="index.html#setup">the setup
 instructions</a> for details on how to install JupyterLab and Python via
 Anaconda. The setup instructions also walk you through the steps you
-should follow to create an ‘lc-python’ folder on your Desktop, and to
-download and unzip the dataset we’ll be working with inside of that
-directory.</p>
+should follow to create an <code>lc-python</code> folder on your
+Desktop, and to download and unzip the dataset we’ll be working with
+inside of that directory.</p>
+</section><section id="getting-started-with-jupyterlab"><h2 class="section-heading">Getting started with JupyterLab<a class="anchor" aria-label="anchor" href="#getting-started-with-jupyterlab"></a>
+</h2>
+<hr class="half-width"><p>To run Python, we are going to use Jupyter Notebooks via <a href="https://jupyterlab.readthedocs.io/en/stable/" class="external-link">JupyterLab</a>.
+Jupyter notebooks are common in data science and visualization and serve
+as a convenient environment for running Python code interactively where
+we can view and share the results of our Python code.</p>
+<p>There are other ways of editing, managing, and running Python code.
+Software developers often use an integrated development environment
+(IDE) like <a href="https://www.jetbrains.com/pycharm/" class="external-link">PyCharm</a>, <a href="https://www.spyder-ide.org/" class="external-link">Spyder</a> or <a href="https://code.visualstudio.com/" class="external-link">Visual Studio Code</a>, or text
+editors like Vim or Emacs, to create and edit Python scripts. After
+editing and saving Python scripts you can execute those programs within
+the IDE itself or directly on the command line. In contrast, Jupyter
+notebooks let us execute and view the results of our Python code
+immediately within the notebook.</p>
+<p>JupyterLab has several other handy features:</p>
+<ul><li>You can easily type, edit, and copy and paste blocks of code.</li>
+<li>Tab complete allows you to easily access the names of things you are
+using and learn more about them.</li>
+<li>It allows you to annotate your code with links, different sized
+text, bullets, etc. to make it more accessible to you and your
+collaborators.</li>
+<li>It allows you to display figures next to the code that produces them
+to tell a complete story of the analysis.</li>
+</ul><p>Each notebook contains one or more cells that contain code, text, or
+images.</p>
+</section><section id="start-jupyterlab"><h2 class="section-heading">Start JupyterLab<a class="anchor" aria-label="anchor" href="#start-jupyterlab"></a>
+</h2>
+<hr class="half-width"><p>Once you have created the <code>lc-python</code> directory on your
+Desktop, you can start JupyterLab by opening a shell command line
+interface or by using Anaconda Navigator.</p>
 <div class="section level3">
-<h3 id="start-jupyterlab">Start JupyterLab<a class="anchor" aria-label="anchor" href="#start-jupyterlab"></a></h3>
-<p>Once you have created the ‘lc-python’ directory on your Desktop, you
-can start JupyterLab by opening a shell (Terminal on Mac or Git Bash for
-Windows), navigating to your <code>lc-python</code> folder, and typing
-‘jupyter lab’ on the command line.</p>
-<div class="codewrapper sourceCode" id="cb1">
+<h3 id="mac-users---command-line">Mac users - Command Line<a class="anchor" aria-label="anchor" href="#mac-users---command-line"></a></h3>
+<ol style="list-style-type: decimal"><li>In your<code>Applications</code> folder, open <code>Utilities</code>
+and double-click on <code>Terminal</code>.</li>
+<li>After you have launched Terminal, change directories to the
+<code>lc-python</code> folder you created earlier and type
+<code>jupyter lab</code>:</li>
+</ol><div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd Desktop/lc-python</span>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ../Desktop/lc-python</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> jupyter lab</span></code></pre>
 </div>
-<p>If you are unfamiliar with the command line, you can also launch
-JupyterLab by opening the Anaconda Navigator app and choosing the
-“Launch” button underneath the JuypterLab icon. If you launch Jupyterlab
-from Anaconda you’ll need to navigate the directory of folders visible
-in the left-hand column of the JupyterLab display to find your
-‘lc-python’ folder.</p>
 </div>
 <div class="section level3">
-<h3 id="a-first-look-at-jupyterlab">A first look at JupyterLab<a class="anchor" aria-label="anchor" href="#a-first-look-at-jupyterlab"></a></h3>
-<p>Launching JupyterLab should open a new tab or window in your
-preferred web browser. While JupyterLab enables you to run code from
-your browser, it does not require you to be online. If you take a look
-at the URL in your browser address bar, you should see that the
-environment is located at your localhost, meaning it is running from
-your computer and not connecting to a URL that is online:
+<h3 id="windows-users---command-line">Windows users - Command Line<a class="anchor" aria-label="anchor" href="#windows-users---command-line"></a></h3>
+<p>To start the JupyterLab server you will need to access the Anaconda
+Prompt.</p>
+<ol style="list-style-type: decimal"><li><p>Press the <kbd>Windows Logo Key</kbd> and search for
+<code>Anaconda Prompt</code>, click the result or press enter.</p></li>
+<li><p>Once you have launched the Anaconda Prompt, type the
+command:</p></li>
+</ol><div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> jupyter lab</span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="start-jupyterlab-from-anaconda-navigator">Start JupyterLab from Anaconda Navigator<a class="anchor" aria-label="anchor" href="#start-jupyterlab-from-anaconda-navigator"></a></h3>
+<p>If you are unfamiliar with the command line, you can also launch
+JupyterLab by opening the Anaconda Navigator app and choosing the
+<code>Launch</code> button underneath the JuypterLab icon.</p>
+<p>First <a href="https://docs.anaconda.com/free/navigator/getting-started/#navigator-starting-navigator" class="external-link">start
+Anaconda Navigator (click for detailed instructions on macOS, Windows,
+and Linux)</a>. You can search for Anaconda Navigator via Spotlight on
+macOS (<kbd>Command</kbd> + <kbd>spacebar</kbd>), or by using the
+Windows search function (<kbd>Windows Logo Key</kbd>).</p>
+<p>After you have launched Anaconda Navigator, click the
+<code>Launch</code> button under JupyterLab. You may need to scroll down
+to find it.</p>
+<p>Here is a screenshot of an Anaconda Navigator page similar to the one
+that should open on either macOS or Windows.</p>
+<figure><img src="../fig/0_anaconda_navigator_landing_page.png" alt="screenshot of the launch button for JuypterLab in Anaconda Navigator" class="figure mx-auto d-block"><figcaption>Launch JupyterLab from Anaconda Navigator</figcaption></figure></div>
+<div class="section level3">
+<h3 id="the-jupyterlab-interface">The JupyterLab Interface<a class="anchor" aria-label="anchor" href="#the-jupyterlab-interface"></a></h3>
+<p>Launching JupyterLab opens a new tab or window in your preferred web
+browser. While JupyterLab enables you to run code from your browser, it
+does not require you to be online. If you take a look at the URL in your
+browser address bar, you should see that the environment is located at
+your localhost, meaning it is running from your computer:
 <code>http://localhost:8888/lab</code>.</p>
-<p>When you first open JupyterLab you should see two main panels. In the
-left sidebar there is a file browser. You should see a folder in the
-file browser named ‘lc-python-circ’ that contains all of our data. If
-you double-clock on that folder, you will see a list of the CSV files
+<p>When you first open JupyterLab you will see two main panels. In the
+left sidebar is your file browser. You should see a folder in the file
+browser named <code>lc-python-circ</code> that contains all of our data.
+If you double-click on that folder, you will see a list of the CSV files
 we’ll be working with. To get back to the working directory, choose the
 folder icon just above file browser pane.</p>
 <p>To the right you will initially see a Launcher tab. Here we have
 options to launch a Python 3 notebook, a Terminal (where we can use
-shell commands), text files, and other filetypes. For now, we want to
-launch a new Python 3 notebook, so click once on the ‘Python 3
-(ipykernel)’ button underneath the Notebook header.</p>
-<p>Now you should see a new tab that is called Untitled.ipynb. You
-should also see it listed in the file browser to the left. Go ahead and
-right-click on the Untitled.ipynb file in the left hand panel and choose
-‘Rename’ from the dropdown options. Let’s call the notebook file,
-‘workshop.ipynb.’</p>
+shell commands), text files, and other items. For now, we want to launch
+a new Python 3 notebook, so click once on the
+<code>Python 3 (ipykernel)</code> button underneath the Notebook
+header.</p>
+<figure><img src="../fig/jupyterlab_notebook_launch.png" alt="screenshot of the JupyterLab for launching notebook" class="figure mx-auto d-block"><figcaption>Start a new Python Notebook</figcaption></figure><p>When you start a new Notebook you should see a new tab labeled
+<code>Untitled.ipynb</code>. You will also see this file listed in the
+file browser to the left. Right-click on the <code>Untitled.ipynb</code>
+file in the file browser and choose <code>Rename</code> from the
+dropdown options. Let’s call the notebook file,
+<code>workshop.ipynb</code>.</p>
 </div>
 <div class="section level3">
 <h3 id="running-python-code">Running Python code<a class="anchor" aria-label="anchor" href="#running-python-code"></a></h3>
@@ -415,10 +471,10 @@ right-click on the Untitled.ipynb file in the left hand panel and choose
 <p>Go to the IPython tab at the bottom right. What happens when you type
 a small calculation there? For example, what happens when you type the
 following calculation and press enter?</p>
-<div class="codewrapper sourceCode" id="cb2">
+<div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span> <span class="op">*</span> <span class="dv">3</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span> <span class="op">*</span> <span class="dv">3</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -433,10 +489,10 @@ following calculation and press enter?</p>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Python returns the result of the calculation.</p>
-<div class="codewrapper sourceCode" id="cb3">
+<div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">21</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">21</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -461,10 +517,10 @@ This is a temporary script file.
 ‘play’ button or f5). A window might pop up asking you to specify the
 run settings, leave the settings as they are and press ‘Run’. What
 happens?</p>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello world!'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello world!'</span>)</span></code></pre>
 </div>
 </div>
 </div>
@@ -480,11 +536,11 @@ happens?</p>
 <div class="accordion-body">
 <p>In the IPython console Python tells you which files it ran and the
 result of this run</p>
-<div class="codewrapper sourceCode" id="cb6">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>runfile(<span class="st">'/home/ylja/.config/spyder-py3/temp.py'</span>, wdir<span class="op">=</span><span class="st">'/home/ylja/.config/spyder-py3'</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>Hello world<span class="op">!</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>runfile(<span class="st">'/home/ylja/.config/spyder-py3/temp.py'</span>, wdir<span class="op">=</span><span class="st">'/home/ylja/.config/spyder-py3'</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Hello world<span class="op">!</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -580,8 +636,8 @@ directly</li>
   "url": "https://librarycarpentry.github.io/lc-python-intro/instructor/01-getting-started.html",
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/instructor/01-getting-started.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2023-10-05",
-  "datePublished": "2023-10-05"
+  "dateModified": "2023-10-06",
+  "datePublished": "2023-10-06"
 }
 
   </script><script>

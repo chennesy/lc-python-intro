@@ -196,7 +196,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="06-pandas.html">6. pandas</a>
+        <a href="06-pandas.html">6. Libraries &amp; Pandas</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -289,28 +289,12 @@
       <hr></nav><main id="main-content" class="main-content"><h1 class="schedule-heading">Summary and Schedule</h1>
       
 
-<p>This lesson is an introduction to programming in Python for
-librarians with little or no previous programming experience. It uses
-examples that are relevant to a wide range of library use cases, and is
-designed to be used as a prerequisite for other Python lessons that will
-be developed in the future (e.g., web scraping, APIs).</p>
-<p>This lesson uses the JupyterLab computing environment and Python
-3.</p>
-<div id="under-design" class="callout callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div id="under-design" class="callout-inner">
-<h3 class="callout-title">Under Design<a class="anchor" aria-label="anchor" href="#under-design"></a>
-</h3>
-<div class="callout-content">
-<p><strong>This lesson is currently in its early design stage; please
-check <a href="design.html">the design notes</a> to see what we have so
-far. Contributions are welcome: we would be particularly grateful for
-exercises and for commentary on the ones already there.</strong></p>
-</div>
-</div>
-</div>
+<p>This lesson is an introduction to programming in Python for library
+and information science workers with little or no previous programming
+experience. It uses examples that are relevant to a wide range of
+library use cases, and is designed as a prerequisite for other Python
+lessons that will be developed in the future (e.g., web scraping, APIs).
+The lesson uses the JupyterLab computing environment and Python 3.</p>
 <div id="prerequisites" class="callout prereq">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check"></i>
@@ -319,11 +303,11 @@ exercises and for commentary on the ones already there.</strong></p>
 <h3 class="callout-title">Prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"></a>
 </h3>
 <div class="callout-content">
-<ol style="list-style-type: decimal"><li><p>Learners need to understand what files and directories are, what
-a working directory is, and how to start a Python interpreter from a
-terminal window.</p></li>
-<li><p>Learners must install <a href="https://www.anaconda.com/download/" class="external-link">Anaconda</a> before the class
-starts.</p></li>
+<ol style="list-style-type: decimal"><li><p>Learners need to understand what files and directories are and
+what a working directory is.</p></li>
+<li><p>Learners must install Python and JupyterLab, and download the
+circulation dataset that will be used in the lesson, before the workshop
+begins.</p></li>
 </ol><p>Please see <a href="index.html#setup">the setup instructions</a> for
 details.</p>
 </div>
@@ -386,7 +370,7 @@ software does?
 <span class="visually-hidden">Duration: </span>01h 40m
 </td>
 <td>
- 6. <a href="06-pandas.html">pandas</a>
+ 6. <a href="06-pandas.html">Libraries &amp; Pandas</a>
 </td>
 <td>
 How do you write a lesson using R Markdown and <a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?
@@ -440,87 +424,82 @@ Finish
       </p>
       </section><section id="setup"><section id="installing-python-using-anaconda"><h2 class="section-heading">Installing Python Using Anaconda<a class="anchor" aria-label="anchor" href="#installing-python-using-anaconda"></a>
 </h2>
-<hr class="half-width"><p><a href="https://python.org" class="external-link">Python</a> is a popular general-purpose
-programming language, one that is commonly used for academic and
-scientific computing applications. Rather than installing each of the
-different packages required for this lesson on their own, we recommend
-downloading and installing <a href="https://www.anaconda.com/distribution" class="external-link">Anaconda</a>, which
-packages together Python, JupyterLab, and many common Python libraries
-that we’ll use in the lesson.</p>
+<hr class="half-width"><p>Python is a popular language for research computing, and great for
+general-purpose programming as well. Installing all of its research
+packages individually can be a bit difficult, so we recommend Anaconda,
+an all-in-one installer.</p>
 <p>Regardless of how you choose to install it, please make sure you
-install Python version 3.x (e.g., Python 3.6 version). Also, please set
-up your Python environment at least a day in advance of the workshop. If
-you encounter problems with the installation procedure, ask your
-workshop organizers via e-mail for assistance so you are ready to go as
-soon as the workshop begins.</p>
+install Python version 3.x (e.g., 3.6 is fine).</p>
+<p>We will teach Python using JupyterLab, a programming environment that
+runs in a web browser (JupyterLab will be installed by Anaconda). For
+this to work you will need a reasonably up-to-date browser. The current
+versions of the Chrome, Safari and Firefox browsers are all supported
+(some older browsers, including Internet Explorer version 9 and below,
+are not).</p>
 <div class="section level3">
 <h3 id="windows---video-tutorialvideo-windows">Windows - <a href="https://www.youtube.com/watch?v=xxQ0mzZ8UvA" class="external-link">Video
 tutorial</a>
 <a class="anchor" aria-label="anchor" href="#windows---video-tutorialvideo-windows"></a></h3>
-<ol style="list-style-type: decimal"><li><p>Open <a href="https://www.anaconda.com/download/" class="external-link">anaconda.com/download</a> with
-your web browser.</p></li>
-<li><p>Download the Python 3 installer for Windows.</p></li>
-<li><p>Double-click the executable and install Python 3 using
-<em>MOST</em> of the default settings. The only exception is to check
-the <strong>Make Anaconda the default Python</strong> option.</p></li>
+<ol style="list-style-type: decimal"><li>Open <a href="https://www.anaconda.com/download/" class="external-link">anaconda.com/download</a> with
+your web browser.</li>
+</ol><p>2.Download the Anaconda for Windows installer with Python 3. (If you
+are not sure which version to choose, you probably want the 64-bit
+Graphical Installer <em>Anaconda3-…-Windows-x86_64.exe</em>)</p>
+<ol start="3" style="list-style-type: decimal"><li>Install Python 3 by running the Anaconda Installer, using all of the
+defaults for installation except make sure to check <em>Add Anaconda to
+my PATH environment variable</em>.</li>
 </ol></div>
 <div class="section level3">
 <h3 id="macos---video-tutorialvideo-mac">macOS - <a href="https://www.youtube.com/watch?v=TcSAln46u9U" class="external-link">Video
 tutorial</a>
 <a class="anchor" aria-label="anchor" href="#macos---video-tutorialvideo-mac"></a></h3>
-<ol style="list-style-type: decimal"><li><p>Open <a href="https://www.anaconda.com/download/" class="external-link">anaconda.com/download</a> with
-your web browser.</p></li>
-<li><p>Download the Python 3 installer for macOS.</p></li>
-<li><p>Install Python 3 using all of the defaults for
-installation.</p></li>
+<ol style="list-style-type: decimal"><li>Open <a href="https://www.anaconda.com/download/" class="external-link">anaconda.com/download</a> with
+your web browser.</li>
+<li>Download the Anaconda Installer with Python 3 for macOS (you can
+either use the Graphical or the Command Line Installer).</li>
+<li>Install Python 3 by running the Anaconda Installer using all of the
+defaults for installation.</li>
 </ol></div>
 <div class="section level3">
 <h3 id="linux">Linux<a class="anchor" aria-label="anchor" href="#linux"></a></h3>
 <p>Note that the following installation steps require you to work from
-the shell. If you run into any difficulties, please request help before
-the workshop begins.</p>
+the shell. If you aren’t comfortable doing the installation yourself
+stop here and request help from the workshop organizers.</p>
 <ol style="list-style-type: decimal"><li><p>Open <a href="https://www.anaconda.com/download/" class="external-link">anaconda.com/download</a> with
 your web browser.</p></li>
-<li><p>Download the Python 3 installer for Linux.</p></li>
-<li><p>Install Python 3 using all of the defaults for
-installation.</p></li>
-</ol><ol style="list-style-type: lower-alpha"><li><p>Open a terminal window.</p></li>
-<li><p>Navigate to the folder where you downloaded the
-installer</p></li>
-<li><p>Type</p></li>
-</ol><div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> bash Anaconda3-</span></code></pre>
-</div>
-<p>and press tab. The name of the file you just downloaded should
-appear.</p>
-<ol start="4" style="list-style-type: lower-alpha"><li><p>Press enter.</p></li>
-<li><p>Follow the text-only prompts. When the license agreement appears
-(a colon will be present at the bottom of the screen) hold the down
-arrow until the bottom of the text. Type <code>yes</code> and press
-enter to approve the license. Press enter again to approve the default
-location for the files. Type <code>yes</code> and press enter to prepend
-Anaconda to your <code>PATH</code> (this makes the Anaconda distribution
-the default Python).</p></li>
+<li><p>Download the Anaconda Installer with Python 3 for Linux.</p></li>
+<li><p>Open a terminal window and navigate to the directory where the
+executable is downloaded (e.g., <code>cd ~/Downloads</code>).</p></li>
+<li><p>Type <code>bash Anaconda3</code> and press <kbd>Tab</kbd> to
+auto-complete the full file name. The name of file you just downloaded
+should appear.</p></li>
+<li><p>Press <kbd>Enter</kbd> (or <kbd>Return</kbd> depending on your
+keyboard). You will follow the text-only prompts. To move through the
+text, press <kbd>Spacebar</kbd>. Type <code>yes</code> and press
+<kbd>Enter</kbd> to approve the license. Press <kbd>Enter</kbd> (or
+<kbd>Return</kbd>) to approve the default location for the files. Type
+<code>yes</code> and press <kbd>Enter</kbd> (or <kbd>Return</kbd>) to
+prepend Anaconda to your PATH (this makes the Anaconda distribution the
+default Python).</p></li>
+<li><p>Close the terminal window.</p></li>
 </ol></div>
 </section><section id="jupyterlab"><h2 class="section-heading">JupyterLab<a class="anchor" aria-label="anchor" href="#jupyterlab"></a>
 </h2>
 <hr class="half-width"><p>We will teach Python using JupyterLab, a part of a family of <a href="https://docs.jupyter.org/en/latest/" class="external-link">Jupyter</a> tools that
 includes Jupyter Notebook and JupyterLab, both of which provide
 interactive web environments where you can write and run Python code. If
-you installed Anaconda, JupyterLab should already be on your system. If
-you did not install Anaconda, you can <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html" class="external-link">install
+you installed Anaconda, JupyterLab is installed on your system. If you
+did not install Anaconda, you can <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html" class="external-link">install
 JupyterLab</a> on its own using conda, pip, or other popular package
 managers.</p>
 </section><section id="download-the-data"><h2 class="section-heading">Download the data<a class="anchor" aria-label="anchor" href="#download-the-data"></a>
 </h2>
-<hr class="half-width"><p>This lesson uses a dataset comprised of circulation data across
-multiple CSV files from the Chicago Public Library system. The data was
-compiled from datasets shared by the Chicago Public Library system in <a href="https://catalog.data.gov/dataset/?q=chicago+%22circulation+by+location%22" class="external-link">the
-data.gov catalog</a>. Please do not download the CSV files directly from
-data.gov since the dataset we’ll use has been cleaned to make it easier
-to work with.</p>
+<hr class="half-width"><p>This lesson uses circulation data in multiple CSV files from the
+Chicago Public Library system. The data was compiled from records shared
+by the Chicago Public Library in <a href="https://catalog.data.gov/dataset/?q=chicago+%22circulation+by+location%22" class="external-link">the
+data.gov catalog</a>. Please do not download the circulation data from
+data.gov since the dataset we’ll use below has been altered for our
+purposes.</p>
 <ol style="list-style-type: decimal"><li>Create a new folder on your Desktop called
 <code>lc-python</code>.</li>
 <li>Download <a href="../files/lc-python-circ.zip">this zip file</a> and
@@ -577,8 +556,8 @@ a new folder called <code>lc-python-circ</code>.</li>
   "url": "https://librarycarpentry.github.io/lc-python-intro/instructor/index.html",
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/instructor/index.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2023-10-05",
-  "datePublished": "2023-10-05"
+  "dateModified": "2023-10-06",
+  "datePublished": "2023-10-06"
 }
 
   </script><script>

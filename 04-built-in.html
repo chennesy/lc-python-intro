@@ -193,8 +193,8 @@ arguments.</a></li>
 <li><a href="#functions-may-have-default-values-for-some-arguments.">Functions may have default values for some arguments.</a></li>
 <li><a href="#use-the-built-in-function-help-to-get-help-for-a-function.">Use the built-in function <code>help</code> to get help for a
 function.</a></li>
-<li><a href="#python-reports-a-syntax-error-when-grammar-rules-thats-python-grammar-not-english-grammar-have-been-violated.">Python reports a syntax error when grammar rules (that’s Python
-grammar, not English grammar) have been violated.</a></li>
+<li><a href="#python-reports-a-syntax-error-when-pythons-grammar-rules-have-been-violated.">Python reports a syntax error when Python’s grammar rules have been
+violated.</a></li>
 <li><a href="#python-reports-a-runtime-error-when-something-goes-wrong-while-a-program-is-executing.">Python reports a runtime error when something goes wrong while a
 program is executing.</a></li>
 <li><a href="#every-function-returns-something.">Every function returns something.</a></li>
@@ -316,7 +316,7 @@ program is executing.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Built-in Functions and Help</h1>
-        <p> Last updated on 2023-10-20 | 
+        <p> Last updated on 2023-10-23 | 
         
         <a href="https://github.com/librarycarpentry/lc-python-intro/edit/main/episodes/04-built-in.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -358,56 +358,46 @@ occur.</li>
 </div>
 <section id="use-comments-to-add-documentation-to-programs."><h2 class="section-heading">Use comments to add documentation to programs.<a class="anchor" aria-label="anchor" href="#use-comments-to-add-documentation-to-programs."></a>
 </h2>
-<hr class="half-width"><div class="codewrapper sourceCode" id="cb1">
+<hr class="half-width"><p>It’s helpful to add comments to our code so that our collaborators
+(and our future selves) will be able to understand what particular
+pieces of code are meant to accomplish or how they work</p>
+<div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This sentence isn't executed by Python.</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">'Library Carpentry'</span>   <span class="co"># Neither is this comment - anything after '#' is ignored.</span></span></code></pre>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">'Library Carpentry'</span>   <span class="co"># Neither is this comment</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Anything after '#' is ignored.</span></span></code></pre>
 </div>
 </section><section id="a-function-may-take-zero-or-more-arguments."><h2 class="section-heading">A function may take zero or more arguments.<a class="anchor" aria-label="anchor" href="#a-function-may-take-zero-or-more-arguments."></a>
 </h2>
-<hr class="half-width"><ul><li>We have seen some functions already — now let’s take a closer
-look.</li>
-<li>An <em>argument</em> is a value passed into a function.</li>
-<li>Any arguments you want to pass into a function must go into the
-<code>()</code>
-<ul><li><code>print("I am an argument and must go here.")</code></li>
-</ul></li>
-<li>You must always use parentheses, because this is how Python knows
-you are calling a function.
-<ul><li>You leave them empty if you don’t want or need to pass any arguments
-in.</li>
-</ul></li>
-<li>
-<code>len</code> takes exactly one.</li>
-<li>
-<code>int</code>, <code>str</code>, and <code>float</code> create a
-new value from an existing one.</li>
-<li>
-<code>print</code> takes zero or more.
-<ul><li>
-<code>print()</code> prints a blank line.</li>
-</ul></li>
-</ul><div class="codewrapper sourceCode" id="cb2">
+<hr class="half-width"><p>We have seen some functions such as <code>print()</code> and
+<code>len()</code> already but let’s take a closer look at their
+structure.</p>
+<p>An <em>argument</em> is a value passed into a function. Any arguments
+you want to pass into a function must go into the <code>()</code></p>
+<div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'before'</span>)</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"I am an argument and must go here."</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'after'</span>)</span></code></pre>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sometimes you don't need to pass an argument."</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span><span class="va">before</span></span>
-<span></span>
-<span><span class="va">after</span></span></code></pre>
+<pre class="output" tabindex="0"><code>I am an argument and must go here.
+
+Sometimes you don't need to pass an argument.</code></pre>
 </div>
+<p>You always need to use parentheses at the end of a function, because
+this tells Python you are calling a function. Leave the parentheses
+empty if you don’t want or need to pass any arguments.</p>
 </section><section id="commonly-used-built-in-functions-include-max-min-and-round."><h2 class="section-heading">Commonly-used built-in functions include <code>max</code>,
 <code>min</code>, and <code>round</code>.<a class="anchor" aria-label="anchor" href="#commonly-used-built-in-functions-include-max-min-and-round."></a>
 </h2>
-<hr class="half-width"><ul><li>Use <code>max</code> to find the largest value of one or more
+<hr class="half-width"><ul><li>Use <code>max()</code> to find the largest value of one or more
 values.</li>
-<li>Use <code>min</code> to find the smallest.</li>
+<li>Use <code>min()</code> to find the smallest.</li>
 <li>Both work on character strings as well as numbers.
 <ul><li>“Larger” and “smaller” use (0-9, A-Z, a-z) to compare letters.</li>
 <li>This means that:
@@ -440,12 +430,10 @@ values.</li>
 </section><section id="functions-may-only-work-for-certain-combinations-of-arguments."><h2 class="section-heading">Functions may only work for certain (combinations of)
 arguments.<a class="anchor" aria-label="anchor" href="#functions-may-only-work-for-certain-combinations-of-arguments."></a>
 </h2>
-<hr class="half-width"><ul><li>
-<code>max</code> and <code>min</code> must be given at least one
-argument.</li>
-<li>And they must be given things that can meaningfully be
-compared.</li>
-</ul><div class="codewrapper sourceCode" id="cb6">
+<hr class="half-width"><p><code>max()</code> and <code>min()</code> must be given at least one
+argument and they must be given things that can meaningfully be
+compared.</p>
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">max</span>(<span class="dv">1</span>, <span class="st">'a'</span>))</span></code></pre>
@@ -457,10 +445,9 @@ compared.</li>
 </div>
 </section><section id="functions-may-have-default-values-for-some-arguments."><h2 class="section-heading">Functions may have default values for some arguments.<a class="anchor" aria-label="anchor" href="#functions-may-have-default-values-for-some-arguments."></a>
 </h2>
-<hr class="half-width"><ul><li>
-<code>round</code> will round off a floating-point number.</li>
-<li>By default, rounds to zero decimal places.</li>
-</ul><div class="codewrapper sourceCode" id="cb8">
+<hr class="half-width"><p><code>round()</code> will round off a floating-point number. By
+default, it will round to zero decimal places.</p>
+<div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">round</span>(<span class="fl">3.712</span>)</span></code></pre>
@@ -470,8 +457,9 @@ compared.</li>
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="fl">4</span></span></code></pre>
 </div>
-<ul><li>We can specify the number of decimal places we want.</li>
-</ul><div class="codewrapper sourceCode" id="cb10">
+<p>But we cab use a second argument (or parameter) to specify the number
+of decimal places we want.</p>
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">round</span>(<span class="fl">3.712</span>, <span class="dv">1</span>)</span></code></pre>
@@ -484,11 +472,18 @@ compared.</li>
 </section><section id="use-the-built-in-function-help-to-get-help-for-a-function."><h2 class="section-heading">Use the built-in function <code>help</code> to get help for a
 function.<a class="anchor" aria-label="anchor" href="#use-the-built-in-function-help-to-get-help-for-a-function."></a>
 </h2>
-<hr class="half-width"><ul><li>Every built-in function has online documentation.</li>
-</ul><div class="codewrapper sourceCode" id="cb12">
+<hr class="half-width"><p>Every built-in function has online documentation. You can access the
+documentation using the <code>help()</code> function or by adding a
+<code>?</code> at the end of your function name in Jupyter.</p>
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(<span class="bu">round</span>)</span></code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">round</span>?</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -502,42 +497,41 @@ round(...)
     This returns an int when called with one argument, otherwise the
     same type as the number. ndigits may be negative.</code></pre>
 </div>
-</section><section id="python-reports-a-syntax-error-when-grammar-rules-thats-python-grammar-not-english-grammar-have-been-violated."><h2 class="section-heading">Python reports a syntax error when grammar rules (that’s Python
-grammar, not English grammar) have been violated.<a class="anchor" aria-label="anchor" href="#python-reports-a-syntax-error-when-grammar-rules-thats-python-grammar-not-english-grammar-have-been-violated."></a>
+</section><section id="python-reports-a-syntax-error-when-pythons-grammar-rules-have-been-violated."><h2 class="section-heading">Python reports a syntax error when Python’s grammar rules have been
+violated.<a class="anchor" aria-label="anchor" href="#python-reports-a-syntax-error-when-pythons-grammar-rules-have-been-violated."></a>
 </h2>
-<hr class="half-width"><ul><li>You’ve seen errors when you try to use a function incorrectly.
-<ul><li>Can also have errors when you use punctuation incorrectly.</li>
-</ul></li>
-<li>Python will run the program up until that point, but if the grammar
-of that line of code has produced an error, then the program will shut
-down with an error.</li>
-</ul><div class="codewrapper sourceCode" id="cb14">
+<hr class="half-width"><p>You’ve already seen errors when you try to use a function
+incorrectly, but you can also have errors when you use punctuation
+incorrectly. Python will run a program up until a point where it
+encounters an error, and when the grammar of a line of code has produced
+an error, the program will shut down and output the error.</p>
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Forgot to close the quotation marks around the string.</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">'Feng</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Forgot to close the quotation marks around the string.</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">'Feng</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="error" tabindex="0"><code>SyntaxError: EOL while scanning string literal</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># An extra '=' in the assignment.</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="op">=</span> <span class="dv">52</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># An extra '=' in the assignment.</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="op">=</span> <span class="dv">52</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="error" tabindex="0"><code>SyntaxError: invalid syntax</code></pre>
 </div>
-<ul><li>Look more closely at the error message:</li>
-</ul><div class="codewrapper sourceCode" id="cb18">
+<p>Let’s breakdown each line of this error message:</p>
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"hello world"</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"hello world"</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -547,41 +541,47 @@ down with an error.</li>
                         ^
 SyntaxError: unexpected EOF while parsing</code></pre>
 </div>
-<ul><li>The message indicates a problem on first line of the input (“line
-1”).
-<ul><li>In this case the “ipython-input” section of the file name tells us
-that we are working with input into IPython.</li>
-</ul></li>
-<li>The <code>-6-</code> part of the filename indicates that the error
-occurred in cell 6 of our Notebook.</li>
-<li>Next is the problematic line of code, indicating the problem with a
-<code>^</code> pointer.</li>
+<ul><li>At the end of the first line of this error message it notes there is
+a problem on first line of the input (“line 1”).</li>
+<li>The “ipython-input” section of the file name tells us that we are
+working with input into IPython and the <code>-6-</code> part of the
+filename indicates that the error occurred in cell 6 of our
+Notebook.</li>
+<li>Next is the problematic line of code -
+<code>print ("hello world"</code> - indicating where the problem is
+found with a <code>^</code> pointer.</li>
+<li>Finally we get the SyntaxError message, which tells us that Python
+expected an ‘EOF’ or end of file. It’s often helpful to look at the end
+of the Error message first. Our SyntaxError, in this case, indicates
+that Python ran through all of the code but expected to find more
+information. In this case it expected to encounter a closing parenthesis
+in the <code>print("hello world")</code> function.</li>
 </ul></section><section id="python-reports-a-runtime-error-when-something-goes-wrong-while-a-program-is-executing."><h2 class="section-heading">Python reports a runtime error when something goes wrong while a
 program is executing.<a class="anchor" aria-label="anchor" href="#python-reports-a-runtime-error-when-something-goes-wrong-while-a-program-is-executing."></a>
 </h2>
-<hr class="half-width"><div class="codewrapper sourceCode" id="cb20">
+<hr class="half-width"><div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">53</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>remaining <span class="op">=</span> <span class="dv">100</span> <span class="op">-</span> aege <span class="co"># mis-spelled 'age'</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">53</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>remaining <span class="op">=</span> <span class="dv">100</span> <span class="op">-</span> aege <span class="co"># mis-spelled 'age'</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="error" tabindex="0"><code>NameError: name 'aege' is not defined</code></pre>
 </div>
-<ul><li>Fix syntax errors by reading the source and runtime errors by
-tracing execution.</li>
-</ul></section><section id="every-function-returns-something."><h2 class="section-heading">Every function returns something.<a class="anchor" aria-label="anchor" href="#every-function-returns-something."></a>
+<p>You can fix syntax errors by reading the source and runtime errors by
+tracing execution.</p>
+</section><section id="every-function-returns-something."><h2 class="section-heading">Every function returns something.<a class="anchor" aria-label="anchor" href="#every-function-returns-something."></a>
 </h2>
-<hr class="half-width"><ul><li>Every function call produces some result.</li>
-<li>If the function doesn’t have a useful result to return, it usually
-returns the special value <code>None</code>.</li>
-</ul><div class="codewrapper sourceCode" id="cb22">
+<hr class="half-width"><p>Every function call produces some result and if the function doesn’t
+have a useful result to return, it usually returns the special value
+<code>None</code>.</p>
+<div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> <span class="bu">print</span>(<span class="st">'example'</span>)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'result of print is'</span>, result)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> <span class="bu">print</span>(<span class="st">'example'</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'result of print is'</span>, result)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -601,12 +601,12 @@ result of print is None</code></pre>
 program: when does the addition happen, when does the subtraction
 happen, when is each function called, etc.</li>
 <li>What is the final value of <code>word</code>?</li>
-</ol><div class="codewrapper sourceCode" id="cb24">
+</ol><div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="st">'blah '</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="bu">max</span>(<span class="bu">min</span>(word <span class="op">*</span> <span class="dv">2</span> <span class="op">+</span> <span class="st">'blur '</span>, <span class="st">'aaah '</span>), <span class="st">'ping'</span>)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(word)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="st">'blah '</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>word <span class="op">=</span> <span class="bu">max</span>(<span class="bu">min</span>(word <span class="op">*</span> <span class="dv">2</span> <span class="op">+</span> <span class="st">'blur '</span>, <span class="st">'aaah '</span>), <span class="st">'ping'</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(word)</span></code></pre>
 </div>
 </div>
 </div>
@@ -637,13 +637,13 @@ happen, when is each function called, etc.</li>
 program below will print.</li>
 <li>Does <code>max(len(rich), poor)</code> run or produce an error
 message? If it runs, does its result make any sense?</li>
-</ol><div class="codewrapper sourceCode" id="cb26">
+</ol><div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>rich <span class="op">=</span> <span class="st">"gold"</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>poor <span class="op">=</span> <span class="st">"tin"</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">max</span>(rich, poor))</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">max</span>(<span class="bu">len</span>(rich), <span class="bu">len</span>(poor)))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>rich <span class="op">=</span> <span class="st">"gold"</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>poor <span class="op">=</span> <span class="st">"tin"</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">max</span>(rich, poor))</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">max</span>(<span class="bu">len</span>(rich), <span class="bu">len</span>(poor)))</span></code></pre>
 </div>
 </div>
 </div>
@@ -687,10 +687,10 @@ TypeError: '&gt;' not supported between instances of 'str' and 'int'</code></pre
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Both functions require an argument to execute</p>
-<div class="codewrapper sourceCode" id="cb28">
+<div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">max</span>())</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">max</span>())</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -816,8 +816,8 @@ tracing the program’s execution.</li>
   "url": "https://librarycarpentry.github.io/lc-python-intro/04-built-in.html",
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/04-built-in.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2023-10-20",
-  "datePublished": "2023-10-20"
+  "dateModified": "2023-10-23",
+  "datePublished": "2023-10-23"
 }
 
   </script><script>

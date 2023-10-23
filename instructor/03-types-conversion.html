@@ -305,7 +305,7 @@ objects.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data Types and Operators</h1>
-        <p> Last updated on 2023-10-20 | 
+        <p> Last updated on 2023-10-23 | 
         
         <a href="https://github.com/librarycarpentry/lc-python-intro/edit/main/episodes/03-types-conversion.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -349,7 +349,9 @@ numbers, and strings.</li>
 </h2>
 <hr class="half-width"><p>Everything in Python is some type of object. Objects contain
 attributes, usually data and related functions, called methods. Every
-object that you work with in Python will be of a specific type.</p>
+object that you work with in Python will be of a specific type and
+understanding an object’s type will help you know what you can and can’t
+do with that object.</p>
 <div class="section level3">
 <h3 id="use-the-built-in-function-type-to-find-an-objects-type-">Use the built-in function <code>type()</code> to find an object’s
 type.<a class="anchor" aria-label="anchor" href="#use-the-built-in-function-type-to-find-an-objects-type-"></a></h3>
@@ -540,9 +542,9 @@ three squared is 9.0</code></pre>
 </div>
 <div class="section level3">
 <h3 id="variables-only-change-value-when-something-is-assigned-to-them-">Variables only change value when something is assigned to them.<a class="anchor" aria-label="anchor" href="#variables-only-change-value-when-something-is-assigned-to-them-"></a></h3>
-<p>In a spreadsheet, if we make one cell depend on another, and then
-update the latter, the former updates automatically. This does
-<strong>not</strong> happen in programming languages.</p>
+<p>In a spreadsheet, if we make cell A1 depend on the value in cell C3,
+and then update the C3, A1 updates automatically. This does
+<strong>not</strong> happen with Python variables.</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -582,7 +584,7 @@ own.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>It is a floating-point number (often abbreviated “float”).</p>
 <div class="codewrapper sourceCode" id="cb23">
@@ -618,7 +620,7 @@ own.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>It is a float: integers are automatically converted to floats as
 necessary.</p>
@@ -634,47 +636,6 @@ necessary.</p>
 <pre class="output" tabindex="0"><code>7.25 is &lt;class 'float'&gt;</code></pre>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div id="choose-a-type" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="choose-a-type" class="callout-inner">
-<h3 class="callout-title">Choose a Type<a class="anchor" aria-label="anchor" href="#choose-a-type"></a>
-</h3>
-<div class="callout-content">
-<p>What type of value (integer, floating point number, or character
-string) would you use to represent each of the following? Try to come up
-with more than one good answer for each problem. For example, in # 1,
-when would counting days with a floating point variable make more sense
-than using an integer?</p>
-<ol style="list-style-type: decimal"><li>Number of days since the start of the year.</li>
-<li>Time elapsed since the start of the year.</li>
-<li>Call number of a book.</li>
-<li>Standard book loan period.</li>
-<li>Number of reference queries in a year.</li>
-<li>Average library classes taught per semester.</li>
-</ol></div>
-</div>
-</div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">
-  Show me the solution
-  </h4>
-</button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
-<div class="accordion-body">
-<ol style="list-style-type: decimal"><li>Integer</li>
-<li>Float</li>
-<li>String</li>
-<li>Integer</li>
-<li>Integer</li>
-<li>Float</li>
-</ol></div>
 </div>
 </div>
 </div>
@@ -714,26 +675,25 @@ division, the <code>//</code> operator performs floor division, and the
 5 % 3: 2</code></pre>
 </div>
 <p>If <code>num_students</code> is the number of students who registered
-for a workshop (let say 150), and <code>num_per_workshop</code> is the
+for a workshop (let’s say 150), and <code>num_per_workshop</code> is the
 number that can attend a single section of the workshop (let say 20),
 write an expression that calculates the number of workshop sections
-needed to teach everyone. Can you also calculate</p>
+needed to teach everyone. It will be helpful to detect when the number
+of students per class doesn’t divide the number of students evenly.
+Detect that number with the <code>%</code> operator and test if the
+remainder that it returns is greater than 0.</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
-<p>Depending on requirements it might be important to detect when the
-number of students per class doesn’t divide the number of students
-evenly. Detect it with the <code>%</code> operator and test if the
-remainder that it returns is greater than 0.</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -749,7 +709,7 @@ remainder that it returns is greater than 0.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>150 students, 20 per workshop
-7 full workshops, plus an extra class with only  10 students</code></pre>
+7 full workshops, plus an extra section with only  10 students</code></pre>
 </div>
 </div>
 </div>
@@ -807,14 +767,14 @@ do?</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
-  <h4 class="accordion-header" id="headingSolution5">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>What do you expect this program to do? It would not be unreasonable
 to expect the Python <code>int</code> command to convert the string
@@ -868,14 +828,14 @@ one right answer.</p>
 </ol></div>
 </div>
 </div>
-<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
-  <h4 class="accordion-header" id="headingSolution6">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>Answer: 1 and 4.</p>
 <ol style="list-style-type: decimal"><li>is correct</li>
@@ -969,8 +929,8 @@ on them.</li>
   "url": "https://librarycarpentry.github.io/lc-python-intro/instructor/03-types-conversion.html",
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/instructor/03-types-conversion.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2023-10-20",
-  "datePublished": "2023-10-20"
+  "dateModified": "2023-10-23",
+  "datePublished": "2023-10-23"
 }
 
   </script><script>

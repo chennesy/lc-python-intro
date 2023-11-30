@@ -7,6 +7,9 @@
     <loc>https://librarycarpentry.github.io/lc-python-intro/02-variables.html</loc>
   </url>
   <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/03-lists.html</loc>
+  </url>
+  <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/03-types-conversion.html</loc>
   </url>
   <url>
@@ -14,6 +17,9 @@
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/04-built-in.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/04-functions.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/04-lists.html</loc>
@@ -25,6 +31,9 @@
     <loc>https://librarycarpentry.github.io/lc-python-intro/05-libraries.html</loc>
   </url>
   <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/06-for-loops.html</loc>
+  </url>
+  <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/06-libraries.html</loc>
   </url>
   <url>
@@ -32,6 +41,9 @@
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/07-for-loops.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/07-looping-data-sets.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/08-looping-data-sets.html</loc>
@@ -106,6 +118,9 @@
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/02-variables.html</loc>
   </url>
   <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/03-lists.html</loc>
+  </url>
+  <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/03-types-conversion.html</loc>
   </url>
   <url>
@@ -113,6 +128,9 @@
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/04-built-in.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/04-functions.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/04-lists.html</loc>
@@ -124,6 +142,9 @@
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/05-libraries.html</loc>
   </url>
   <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/06-for-loops.html</loc>
+  </url>
+  <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/06-libraries.html</loc>
   </url>
   <url>
@@ -131,6 +152,9 @@
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/07-for-loops.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/07-looping-data-sets.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/08-looping-data-sets.html</loc>

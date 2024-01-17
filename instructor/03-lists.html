@@ -350,7 +350,7 @@ assignment.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Lists</h1>
-        <p>Last updated on 2023-11-30 |
+        <p>Last updated on 2024-01-17 |
         
         <a href="https://github.com/librarycarpentry/lc-python-intro/edit/main/episodes/03-lists.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -433,14 +433,14 @@ elements in a list.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'zeroth item of zip_codes:'</span>, zip_codes[<span class="dv">0</span>])</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'fourth item of zip_codes:'</span>, zip_codes[<span class="dv">4</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'1st item of zip_codes (0th index):'</span>, zip_codes[<span class="dv">0</span>])</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'5th item of zip_codes (4th index):'</span>, zip_codes[<span class="dv">4</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>zeroth item of zip_codes: 60625
-fourth item of zip_codes: 60634</code></pre>
+<pre class="output" tabindex="0"><code>1st item of zip_codes (0th index): 60625
+5th item of zip_codes (4th index): 60634</code></pre>
 </div>
 </section><section id="list-values-can-be-replaced-by-assigning-them-with-their-index."><h2 class="section-heading">List values can be replaced by assigning them with their index.<a class="anchor" aria-label="anchor" href="#list-values-can-be-replaced-by-assigning-them-with-their-index."></a>
 </h2>
@@ -495,8 +495,8 @@ value with parts, not a collection of values.</p>
 </h2>
 <hr class="half-width"><p>Use <code>[]</code> on its own to represent a list that doesn’t
 contain any values. This is helpful as a starting point for collecting
-values (which we will see in our episode on
-loops](07-for-loops.md)).</p>
+values (<a href="06-for-loops.html">which we will see in our episode on
+For Loops</a>).</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -546,12 +546,13 @@ assigned to the collection.</p>
 </div>
 <p>In the example above, the <code>numbers</code> variable doesn’t
 retain its original values of [1,2,3,4] because when we changed the
-value of the zeroth element of the <code>numbers_dupe</code> list it
-also updated the value in <code>numbers</code>. This behavior is due to
-the list being a mutable (changeable) object. When we change the value
-of the first item in the list, we’re changing the list object itself. We
-could assign dozens of variables (sticky notes) to that list object, but
-they’re all pointing to the same thing.</p>
+value of the 1st element of the <code>numbers_dupe</code> list -
+<code>numbers_dupe[0]</code> - it also updated the value in
+<code>numbers</code>. This behavior is due to the list being a mutable
+(changeable) object. When we change the value of the first item in the
+list, we’re changing the list object itself. We could assign dozens of
+variables (sticky notes) to that list object, but they’re all pointing
+to the same thing.</p>
 <p>To account for this we can use the <code>.copy()</code> method which
 will create a new list object that is no longer connected with the
 original list.</p>
@@ -661,7 +662,7 @@ second time: [3, 5]</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -702,7 +703,7 @@ list <code>values[low:high]</code>?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The list’s length would be equal to <code>high - low</code>.</p>
 </div>
@@ -741,7 +742,7 @@ does.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>It creates a list of the <code>some string</code>s characters as
 elements.</li>
@@ -783,7 +784,7 @@ negative indexing.)</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -829,7 +830,7 @@ collection?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -870,7 +871,7 @@ element.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -919,7 +920,7 @@ difference between <code>sorted(letters)</code> and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7">Show me the solution</h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <p>Program A:</p>
 <div class="codewrapper">
@@ -978,7 +979,7 @@ difference between <code>new = old</code> and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8">Show me the solution</h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <p>Program A:</p>
 <div class="codewrapper">
@@ -1079,7 +1080,7 @@ assignment</strong>, which will only return a copy of
   "url": "https://librarycarpentry.github.io/lc-python-intro/instructor/03-lists.html",
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/instructor/03-lists.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2023-11-30",
+  "dateModified": "2024-01-17",
   "datePublished": "2024-01-17"
 }
 

@@ -86,11 +86,11 @@
   Python Intro for Libraries
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 44%" class="percentage">
-    44%
+<aside class="col-md-12 lesson-progress"><div style="width: 43%" class="percentage">
+    43%
   </div>
   <div class="progress library">
-    <div class="progress-bar library" role="progressbar" style="width: 44%" aria-valuenow="44" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar library" role="progressbar" style="width: 43%" aria-valuenow="43" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -346,13 +346,13 @@ files.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Looping Over Data Sets</h1>
-        <p>Last updated on 2023-11-30 |
+        <p>Last updated on 2024-02-09 |
         
         <a href="https://github.com/librarycarpentry/lc-python-intro/edit/main/episodes/07-looping-data-sets.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
         
         
-        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
+        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
         
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -441,8 +441,10 @@ files.<a class="anchor" aria-label="anchor" href="#use-glob-and-for-to-process-b
 <hr class="half-width"><p>Now we can use glob in a <code>for</code> loop to create dataframes
 from all of the CSV files in the <code>data</code> directory. To use
 tools like <code>glob</code> it helps a lot if files are named and
-stored consistently so that simple patterns will find the right
-data.</p>
+stored consistently so that simple patterns will find the right data.
+You can learn more about how to name files to improve
+machine-readability from the <a href="https://help.osf.io/article/146-file-naming" class="external-link">Open Science
+Foundation article on file naming</a>.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -466,6 +468,37 @@ data/2020_circ.csv 8222810
 data/2015_circ.csv 3195053
 data/2014_circ.csv 2792631</code></pre>
 </div>
+<p>The output of the files above may be different for you, depending on
+what operating system you use. The glob library doesn’t have its own
+internal system for determining how filenames are sorted, but instead
+relies on the operating system’s filesystem. Since operating systems can
+differ, it is helpful to use Python to manually sort the glob files so
+that everyone will see the same results, regardless of their operating
+system. You can do that by applying the Python method
+<code>sorted()</code> to the <code>glob.glob</code> list.</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'data/*.csv'</span>)):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> pd.read_csv(csv)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(csv, data[<span class="st">'ytd'</span>].<span class="bu">max</span>())</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>data/2011_circ.csv 1678047
+data/2012_circ.csv 1707032
+data/2013_circ.csv 2069537
+data/2014_circ.csv 2792631
+data/2015_circ.csv 3195053
+data/2016_circ.csv 3478369
+data/2017_circ.csv 3623318
+data/2018_circ.csv 4006963
+data/2019_circ.csv 4821180
+data/2020_circ.csv 8222810
+data/2021_circ.csv 6629348
+data/2022_circ.csv 6336579</code></pre>
+</div>
 </section><section id="appending-dataframes-to-a-list"><h2 class="section-heading">Appending dataframes to a list<a class="anchor" aria-label="anchor" href="#appending-dataframes-to-a-list"></a>
 </h2>
 <hr class="half-width"><p>In the example above, we can print out results from each dataframe as
@@ -473,35 +506,35 @@ we cycle through them, but it would be more convenient if we saved all
 of the yearly usage data in these CSV files into dataframes that we
 could work with later on. We can do that by using a list “accumulator”
 (as we covered in the last episode).</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dfs <span class="op">=</span> [] <span class="co"># this is an empty list to hold all of our dataframes</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> glob.glob(<span class="st">'data/*.csv'</span>):</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  data <span class="op">=</span> pd.read_csv(csv)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(counter, <span class="st">'Saving'</span>, <span class="bu">len</span>(data), <span class="st">'rows from'</span>, csv)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  dfs.append(data)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  counter <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of saved dataframes:'</span>, <span class="bu">len</span>(dfs))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dfs <span class="op">=</span> [] <span class="co"># this is an empty list to hold all of our dataframes</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'data/*.csv'</span>)):</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  data <span class="op">=</span> pd.read_csv(csv)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(counter, <span class="st">'Saving'</span>, <span class="bu">len</span>(data), <span class="st">'rows from'</span>, csv)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  dfs.append(data)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  counter <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of saved dataframes:'</span>, <span class="bu">len</span>(dfs))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>1 Saving 83 rows from data/2011_circ.csv
-2 Saving 83 rows from data/2016_circ.csv
-3 Saving 83 rows from data/2017_circ.csv
-4 Saving 86 rows from data/2022_circ.csv
-5 Saving 83 rows from data/2018_circ.csv
-6 Saving 84 rows from data/2019_circ.csv
-7 Saving 82 rows from data/2012_circ.csv
-8 Saving 83 rows from data/2013_circ.csv
-9 Saving 85 rows from data/2021_circ.csv
+2 Saving 82 rows from data/2012_circ.csv
+3 Saving 83 rows from data/2013_circ.csv
+4 Saving 83 rows from data/2014_circ.csv
+5 Saving 83 rows from data/2015_circ.csv
+6 Saving 83 rows from data/2016_circ.csv
+7 Saving 83 rows from data/2017_circ.csv
+8 Saving 83 rows from data/2018_circ.csv
+9 Saving 84 rows from data/2019_circ.csv
 10 Saving 85 rows from data/2020_circ.csv
-11 Saving 83 rows from data/2015_circ.csv
-12 Saving 83 rows from data/2014_circ.csv
+11 Saving 85 rows from data/2021_circ.csv
+12 Saving 86 rows from data/2022_circ.csv
 Number of saved dataframes: 12</code></pre>
 </div>
 </section><section id="concatenating-dataframes"><h2 class="section-heading">Concatenating dataframes<a class="anchor" aria-label="anchor" href="#concatenating-dataframes"></a>
@@ -514,14 +547,14 @@ methods to accomplish different goals. Because all of our CSVs have the
 exact same columns, if we want to concatenate them vertically (adding
 all of the rows from each dataframe together in order), we can do so
 using <code>concat()</code>, which takes a list of dataframes as its
-first argument. Since we aren’t using a specific column as a pandas
+first argument. Since we aren’t using a specific column as a Pandas
 index, we’ll set the argument of <code>ignore_index</code> to be
 True.</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat(dfs, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of rows in df:'</span>, <span class="bu">len</span>(df))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat(dfs, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of rows in df:'</span>, <span class="bu">len</span>(df))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -536,12 +569,12 @@ True.</p>
 <h3 class="callout-title">Determining Matches<a class="anchor" aria-label="anchor" href="#determining-matches"></a>
 </h3>
 <div class="callout-content">
-<p>Which of these files is <em>not</em> matched by the expression
-<code>glob.glob('data/*as*.csv')</code>?</p>
-<ol style="list-style-type: decimal"><li><code>data/gapminder_gdp_africa.csv</code></li>
-<li><code>data/gapminder_gdp_americas.csv</code></li>
-<li><code>data/gapminder_gdp_asia.csv</code></li>
-<li>1 and 2 are not matched.</li>
+<p>Which of these files would be matched by the expression
+<code>glob.glob('data/*circ.csv')</code>?</p>
+<ol style="list-style-type: decimal"><li><code>data/2011_circ.csv</code></li>
+<li><code>data/2012_circ_stats.csv</code></li>
+<li><code>circ/2013_circ.csv</code></li>
+<li>Both 1 and 3</li>
 </ol></div>
 </div>
 </div>
@@ -550,36 +583,33 @@ True.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>##Solution</p>
-<p>1 is not matched by the regular expresion.</p>
+<p>Only item 1 is matched by the wildcard expression
+<code>data/*circ.csv</code>.</p>
 </div>
 </div>
 </div>
 </div>
-<div id="minimum-file-size" class="callout challenge">
+<div id="minimum-circulation-per-year" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="minimum-file-size" class="callout-inner">
-<h3 class="callout-title">Minimum File Size<a class="anchor" aria-label="anchor" href="#minimum-file-size"></a>
+<div id="minimum-circulation-per-year" class="callout-inner">
+<h3 class="callout-title">Minimum circulation per year<a class="anchor" aria-label="anchor" href="#minimum-circulation-per-year"></a>
 </h3>
 <div class="callout-content">
-<p>Modify this program so that it prints the number of records in the
-file that has the fewest records.</p>
-<div class="codewrapper sourceCode" id="cb11">
+<p>Modify the following code to print out the lowest value in the
+<code>ytd</code> column from each year/file.</p>
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>fewest <span class="op">=</span> ____</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> glob.glob(<span class="st">'data/*.csv'</span>):</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    dataframe <span class="op">=</span> pandas.____(filename)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    fewest <span class="op">=</span> <span class="bu">min</span>(____, dataframe.shape[<span class="dv">0</span>]) </span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'smallest file has'</span>, fewest, <span class="st">'records'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'data/*.csv'</span>)):</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> pd.read_csv(____)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(csv, data[<span class="st">'____'</span>].____())</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    </span></code></pre>
 </div>
-<p>Notice that the shape method returns a tuple with the number of rows
-and columns of the data frame.</p>
 </div>
 </div>
 </div>
@@ -588,33 +618,64 @@ and columns of the data frame.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-<p>##Solution</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>fewest <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> glob.glob(<span class="st">'data/*.csv'</span>):</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    dataframe <span class="op">=</span> pandas.read_csv(filename)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    fewest <span class="op">=</span> <span class="bu">min</span>(fewest , dataframe.shape[<span class="dv">0</span>]) </span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'smallest file has'</span>, fewest, <span class="st">'records'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'data/*.csv'</span>)):</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> pd.read_csv(csv)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(csv, data[<span class="st">'ytd'</span>].<span class="bu">min</span>())</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    </span></code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div id="comparing-data" class="callout discussion">
+<div id="compile-csvs-into-one-dataframe" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="comparing-data" class="callout-inner">
-<h3 class="callout-title">Comparing Data<a class="anchor" aria-label="anchor" href="#comparing-data"></a>
+<div id="compile-csvs-into-one-dataframe" class="callout-inner">
+<h3 class="callout-title">Compile CSVs into one dataframe<a class="anchor" aria-label="anchor" href="#compile-csvs-into-one-dataframe"></a>
 </h3>
 <div class="callout-content">
-<p>Write a program that reads in the regional data sets and plots the
-average GDP per capita for each region over time in a single chart.</p>
+<p>Imagine you had a folder named <code>outputs/</code> that included
+all kinds of different file types. Use <code>glob</code> and a
+<code>for</code> loop to iterate through all of the CSV files in the
+folder that have a file name that begins with <code>data</code>. Save
+them to a list called <code>dfs</code>, and then use
+<code>pd.concat()</code> to concatenate all of the dataframes from the
+<code>dfs</code> list together into a new dataframe called,
+<code>new_df</code>. You can assume that all of the data CSV files have
+the same columns so they will concatenate together cleanly using
+<code>pd.concat()</code>.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>dfs <span class="op">=</span> []</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'outputs/data*.csv'</span>)):</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> pd.read_csv(csv)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    dfs.append(data)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>new_df <span class="op">=</span> pd.concat(dfs, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    </span></code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -693,7 +754,7 @@ files.</li>
   "url": "https://librarycarpentry.github.io/lc-python-intro/instructor/07-looping-data-sets.html",
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/instructor/07-looping-data-sets.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2023-11-30",
+  "dateModified": "2024-02-09",
   "datePublished": "2024-02-09"
 }
 

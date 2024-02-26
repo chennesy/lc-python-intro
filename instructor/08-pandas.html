@@ -220,10 +220,11 @@
         
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#pinpoint-specific-rows-and-columns-in-a-dataframe">Pinpoint specific rows and columns in a dataframe</a></li>
+        <ul><li><a href="#pinpoint-specific-rows-and-columns-in-a-dataframe">Pinpoint specific rows and columns in a DataFrame</a></li>
 <li><a href="#summary-statistics-on-columns">Summary statistics on columns</a></li>
 <li><a href="#use-.groupby-to-analyze-subsets-of-data">Use .groupby() to analyze subsets of data</a></li>
-<li><a href="#save-dataframes">Save dataframes</a></li>
+<li><a href="#use-.iloc-and-.loc-to-select-dataframe-locations.">Use .iloc[] and .loc[] to select DataFrame locations.</a></li>
+<li><a href="#save-dataframes">Save DataFrames</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
         
@@ -342,7 +343,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Using pandas</h1>
-        <p>Last updated on 2023-11-30 |
+        <p>Last updated on 2024-02-26 |
         
         <a href="https://github.com/librarycarpentry/lc-python-intro/edit/main/episodes/08-pandas.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -377,10 +378,10 @@
 </div>
 </div>
 </div>
-<section id="pinpoint-specific-rows-and-columns-in-a-dataframe"><h2 class="section-heading">Pinpoint specific rows and columns in a dataframe<a class="anchor" aria-label="anchor" href="#pinpoint-specific-rows-and-columns-in-a-dataframe"></a>
+<section id="pinpoint-specific-rows-and-columns-in-a-dataframe"><h2 class="section-heading">Pinpoint specific rows and columns in a DataFrame<a class="anchor" aria-label="anchor" href="#pinpoint-specific-rows-and-columns-in-a-dataframe"></a>
 </h2>
 <hr class="half-width"><p>If you don’t already have all of the CSV files loaded into a
-dataframe, let’s do that now:</p>
+DataFrame, let’s do that now:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -397,8 +398,8 @@ dataframe, let’s do that now:</p>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre>
 </div>
 <div class="section level3">
-<h3 id="use-tail-to-look-at-the-end-of-the-dataframe">Use <code>tail()</code> to look at the end of the dataframe<a class="anchor" aria-label="anchor" href="#use-tail-to-look-at-the-end-of-the-dataframe"></a></h3>
-<p>We’ve seen how to look at the first rows in your dataframe using
+<h3 id="use-tail-to-look-at-the-end-of-the-dataframe">Use <code>tail()</code> to look at the end of the DataFrame<a class="anchor" aria-label="anchor" href="#use-tail-to-look-at-the-end-of-the-dataframe"></a></h3>
+<p>We’ve seen how to look at the first rows in your DataFrame using
 <code>.head()</code>. You can use <code>.tail()</code> to look at the
 final rows. You can also pass the number of rows you’d like to view as
 an argument for <code>.head()</code> and <code>.tail()</code> in case
@@ -410,9 +411,9 @@ the the default of five rows doesn’t work for you.</p>
 </div>
 </div>
 <div class="section level3">
-<h3 id="slicing-a-dataframe">Slicing a dataframe<a class="anchor" aria-label="anchor" href="#slicing-a-dataframe"></a></h3>
+<h3 id="slicing-a-dataframe">Slicing a DataFrame<a class="anchor" aria-label="anchor" href="#slicing-a-dataframe"></a></h3>
 <p>We can use the same slicing syntax that we used for strings and lists
-to look at a specific range of rows in a dataframe.</p>
+to look at a specific range of rows in a DataFrame.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -421,7 +422,7 @@ to look at a specific range of rows in a dataframe.</p>
 </div>
 <div class="section level3">
 <h3 id="look-at-specific-columns">Look at specific columns<a class="anchor" aria-label="anchor" href="#look-at-specific-columns"></a></h3>
-<p>To work specifically with one column of a dataframe we can use a
+<p>To work specifically with one column of a DataFrame we can use a
 similar syntax, but refer to the name the column of interest.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -465,7 +466,7 @@ rows 100 to 102:
 Name: year, dtype: int64</code></pre>
 </div>
 <p>Columns display differently in our notebook since a column is a
-different type of object than a full dataframe.</p>
+different type of object than a full DataFrame.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -479,12 +480,14 @@ different type of object than a full dataframe.</p>
 </div>
 </section><section id="summary-statistics-on-columns"><h2 class="section-heading">Summary statistics on columns<a class="anchor" aria-label="anchor" href="#summary-statistics-on-columns"></a>
 </h2>
-<hr class="half-width"><p>A column is a pandas series object. One of the advantages of pandas
-is that we can use built-in functions to provide summary statistics
-across series such as columns. Since it can be difficult to get a sense
-of the range of data in a large dataframe by looking over the whole
-thing manually, these functions can help us understand our dataset
-quickly and ask specific questions.</p>
+<hr class="half-width"><p>A pandas Series is a one-dimensional array, like a column in a
+spreadsheet, while a pandas DataFrame is a two-dimensional tabular data
+structure with labeled axes, similar to a spreadsheet. One of the
+advantages of pandas is that we can use built-in functions to provide
+summary statistics across Series such as columns. Since it can be
+difficult to get a sense of the range of data in a large DataFrame by
+looking over the whole thing manually, these functions can help us
+understand our dataset quickly and ask specific questions.</p>
 <p>If we wanted to know the range of years covered in this data, for
 example, we can look at the maximum and minimum values in the
 <code>year</code> column.</p>
@@ -654,30 +657,64 @@ chain together many methods into a single line of code.</p>
 Name: ytd, dtype: int64</code></pre>
 </div>
 </div>
-</section><section id="save-dataframes"><h2 class="section-heading">Save dataframes<a class="anchor" aria-label="anchor" href="#save-dataframes"></a>
+</section><section id="use-.iloc-and-.loc-to-select-dataframe-locations."><h2 class="section-heading">Use .iloc[] and .loc[] to select DataFrame locations.<a class="anchor" aria-label="anchor" href="#use-.iloc-and-.loc-to-select-dataframe-locations."></a>
+</h2>
+<hr class="half-width"><p>You can point to specific locations in a DataFrame using
+two-dimensional numerical indexes with <code>.iloc[]</code>.</p>
+<div class="codewrapper sourceCode" id="cb22">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print values in the 1st and 2nd to last columns in the first row</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Branch:'</span>, df.iloc[<span class="dv">0</span>,<span class="dv">0</span>], <span class="st">'</span><span class="ch">\n</span><span class="st">YTD circ:'</span>, df.iloc[<span class="dv">0</span>,<span class="op">-</span><span class="dv">2</span>])</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># '\n' prints a linebreak</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Branch: Albany Park 
+YTD circ: 120059</code></pre>
+</div>
+<p><code>.loc[]</code> uses the same structure but takes row (index) and
+column names instead of numerical indexes. Since our <code>df</code>
+rows don’t have index names we would still use the default numerical
+index.</p>
+<div class="codewrapper sourceCode" id="cb24">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print the same values as above, using the column names</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Branch:'</span>, df.loc[<span class="dv">0</span>,<span class="st">'branch'</span>], <span class="st">'</span><span class="ch">\n</span><span class="st">YTD circ:'</span>, df.loc[<span class="dv">0</span>, <span class="st">'ytd'</span>])</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>Branch: Albany Park 
+YTD circ: 120059</code></pre>
+</div>
+</section><section id="save-dataframes"><h2 class="section-heading">Save DataFrames<a class="anchor" aria-label="anchor" href="#save-dataframes"></a>
 </h2>
 <hr class="half-width"><p>You might want to export the series of usage by year and branch that
 we just created so that you can share it with colleagues. Pandas
 includes a variety of methods that begin with <code>.to_...</code> that
 allow us to convert and export data in different ways. First, let’s save
-our series as a dataframe so we can more view the output in a better
+our series as a DataFrame so we can more view the output in a better
 format in our Jupyter notebook.</p>
-<div class="codewrapper sourceCode" id="cb22">
+<div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>circ_df <span class="op">=</span> circ_by_year_branch.to_frame()</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>circ_df.head(<span class="dv">5</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>circ_df <span class="op">=</span> circ_by_year_branch.to_frame()</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>circ_df.head(<span class="dv">5</span>)</span></code></pre>
 </div>
 <div class="section level3">
 <h3 id="save-to-csv">Save to CSV<a class="anchor" aria-label="anchor" href="#save-to-csv"></a></h3>
-<p>Next, let’s export the new dataframe to a CSV file so we can share it
+<p>Next, let’s export the new DataFrame to a CSV file so we can share it
 with colleagues who love spreadsheets. The <code>.to_csv()</code> method
 expects a string that will be the name of the file as a parameter. Make
 sure to add the .csv filetype to your file name.</p>
-<div class="codewrapper sourceCode" id="cb23">
+<div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>circ_df.to_csv(<span class="st">'high_usage.csv'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>circ_df.to_csv(<span class="st">'high_usage.csv'</span>)</span></code></pre>
 </div>
 <p>You should now see, in the JupyterLab file explorer to the left, the
 new CSV file. If you don’t see it, you can hit the refresh icon (it
@@ -693,33 +730,32 @@ on the CSV to preview the full spreadsheet in a new Jupyter tab.</p>
 <div class="callout-content">
 <p>Working with your data in CSVs (especially via tools like Microsoft
 Excel) can introduce reproducibility issues. For example, you’ll
-sometimes have character encoding problems, where certain characters in
-your dataset will no longer display properly. Sometimes tools like Excel
-will auto format columns (such as dates) in ways that will make it hard
-to work with them later on.</p>
+sometimes encounter character encoding problems, where certain
+characters in your dataset will no longer display properly after editing
+them in a spreadsheet software like Excel, and re-importing them to a
+pandas DataFrame.</p>
 <p>One way to avoid issues like this is to save Python objects as <a href="https://docs.python.org/3/library/pickle.html" class="external-link">pickles</a>.
 Technically speaking, the Python pickle module serializes and
 de-serializes a Python object’s structure. In practical terms, pickling
-allows you to store Python objects (like dataframes, lists, etc.)
-efficiently and in a way that you can reload them into Python later on
-without losing any data.</p>
-<p>You can save a dataframe to pickle by using the
+allows you to store Python objects (like DataFrames, lists, etc.)
+efficiently and without losing or corrupting your data.</p>
+<p>You can save a DataFrame to pickle by using the
 <code>to_pickle()</code> method and using the filetype of
 <code>pkl</code>.</p>
-<div class="codewrapper sourceCode" id="cb24">
+<div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>circ_df.to_pickle(<span class="st">'high_usage.pkl'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>circ_df.to_pickle(<span class="st">'high_usage.pkl'</span>)</span></code></pre>
 </div>
-<p>But you can only “see” the data in the pickle file by reloading it
-into Python. This is a great way to save a dataframe that you created
-during one JupyterLab session so that you can reload it later on, or
-share it with a colleague who’s familiar with Python.</p>
-<div class="codewrapper sourceCode" id="cb25">
+<p>You can only “see” the data in a pickle file by reloading it into
+Python. This is a great way to save a DataFrame that you created in one
+JupyterLab session so that you can reload it later on, or share it with
+a colleague who’s familiar with Python.</p>
+<div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>new_df <span class="op">=</span> pd.read_pickle(<span class="st">'high_usage.pkl'</span>)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>new_df.head()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>new_df <span class="op">=</span> pd.read_pickle(<span class="st">'high_usage.pkl'</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>new_df.head()</span></code></pre>
 </div>
 </div>
 </div>
@@ -732,15 +768,15 @@ share it with a colleague who’s familiar with Python.</p>
 <h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
-<ul><li>Use <code>.loc()</code> and <code>.iloc()</code> to pinpoint
-specific locations in Pandas dataframes.</li>
-<li>Use builtin methods <code>.sum()</code>, <code>.mean()</code>,
+<ul><li>Use builtin methods <code>.sum()</code>, <code>.mean()</code>,
 <code>unique()</code>, and <code>nunique()</code> to explore summary
-statistics on the rows and colums in your dataframe.</li>
+statistics on the rows and colums in your DataFrame.</li>
 <li>Use <code>.groupby()</code> to work with subsets of your
 dataset.</li>
 <li>Sort pandas series with <code>.sort_values()</code>.</li>
-<li>Save dataframes to CSV and pickle files using <code>.to_csv()</code>
+<li>Use <code>.loc()</code> and <code>.iloc()</code> to pinpoint
+specific locations in Pandas DataFrames.</li>
+<li>Save DataFrames to CSV and pickle files using <code>.to_csv()</code>
 and <code>.to_pickle()</code>.</li>
 </ul></div>
 </div>
@@ -804,8 +840,8 @@ and <code>.to_pickle()</code>.</li>
   "url": "https://librarycarpentry.github.io/lc-python-intro/instructor/08-pandas.html",
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/instructor/08-pandas.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2023-11-30",
-  "datePublished": "2024-02-20"
+  "dateModified": "2024-02-26",
+  "datePublished": "2024-02-26"
 }
 
   </script><script>

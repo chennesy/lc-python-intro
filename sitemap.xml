@@ -241,6 +241,9 @@
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/reference.html</loc>
   </url>
   <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/variables.html</loc>
+  </url>
+  <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor-notes.html</loc>
   </url>
   <url>
@@ -251,5 +254,8 @@
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/variables.html</loc>
   </url>
 </urlset>

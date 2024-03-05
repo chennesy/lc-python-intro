@@ -100,6 +100,9 @@
     <loc>https://librarycarpentry.github.io/lc-python-intro/aio.html</loc>
   </url>
   <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/conditionals.html</loc>
+  </url>
+  <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/design.html</loc>
   </url>
   <url>
@@ -107,6 +110,15 @@
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/exercises.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/for-loops.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/functions.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/getting-started.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/images.html</loc>
@@ -214,6 +226,9 @@
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/aio.html</loc>
   </url>
   <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/conditionals.html</loc>
+  </url>
+  <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/design.html</loc>
   </url>
   <url>
@@ -221,6 +236,15 @@
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/exercises.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/for-loops.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/functions.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/getting-started.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/images.html</loc>
@@ -235,13 +259,37 @@
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/key-points.html</loc>
   </url>
   <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/libraries.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/lists.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/looping-data-sets.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/pandas.html</loc>
+  </url>
+  <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/profiles.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/reference.html</loc>
   </url>
   <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/scope.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/style.html</loc>
+  </url>
+  <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/variables.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/wrap.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/instructor/writing-functions.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/instructor-notes.html</loc>
@@ -250,12 +298,36 @@
     <loc>https://librarycarpentry.github.io/lc-python-intro/key-points.html</loc>
   </url>
   <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/libraries.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/lists.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/looping-data-sets.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/pandas.html</loc>
+  </url>
+  <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/profiles.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/reference.html</loc>
   </url>
   <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/scope.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/style.html</loc>
+  </url>
+  <url>
     <loc>https://librarycarpentry.github.io/lc-python-intro/variables.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/wrap.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-python-intro/writing-functions.html</loc>
   </url>
 </urlset>

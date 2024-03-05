@@ -386,9 +386,9 @@ dataframe.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> [<span class="st">'data/2011_circ.csv'</span>, <span class="st">'data/2012_circ.csv'</span>]:</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  data <span class="op">=</span> pd.read_csv(filename)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(filename, data[<span class="st">'ytd'</span>].<span class="bu">max</span>())</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> [<span class="st">'data/2011_circ.csv'</span>, <span class="st">'data/2012_circ.csv'</span>]:</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>  data <span class="op">=</span> pd.read_csv(filename)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>  <span class="bu">print</span>(filename, data[<span class="st">'ytd'</span>].<span class="bu">max</span>())</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -416,8 +416,8 @@ directory with names that end with <code>.txt</code>.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'all csv files in data directory:'</span>, glob.glob(<span class="st">'data/*.csv'</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="im">import</span> glob</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'all csv files in data directory:'</span>, glob.glob(<span class="st">'data/*.csv'</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -437,9 +437,9 @@ Foundation article on file naming</a>.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> glob.glob(<span class="st">'data/*.csv'</span>):</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  data <span class="op">=</span> pd.read_csv(csv)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(csv, data[<span class="st">'ytd'</span>].<span class="bu">max</span>())</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> glob.glob(<span class="st">'data/*.csv'</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  data <span class="op">=</span> pd.read_csv(csv)</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  <span class="bu">print</span>(csv, data[<span class="st">'ytd'</span>].<span class="bu">max</span>())</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -468,9 +468,9 @@ system. You can do that by applying the Python method
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'data/*.csv'</span>)):</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> pd.read_csv(csv)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(csv, data[<span class="st">'ytd'</span>].<span class="bu">max</span>())</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'data/*.csv'</span>)):</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>    data <span class="op">=</span> pd.read_csv(csv)</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>    <span class="bu">print</span>(csv, data[<span class="st">'ytd'</span>].<span class="bu">max</span>())</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -498,16 +498,16 @@ could work with later on. We can do that by using a list “accumulator”
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dfs <span class="op">=</span> [] <span class="co"># this is an empty list to hold all of our dataframes</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'data/*.csv'</span>)):</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  data <span class="op">=</span> pd.read_csv(csv)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(counter, <span class="st">'Saving'</span>, <span class="bu">len</span>(data), <span class="st">'rows from'</span>, csv)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  dfs.append(data)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  counter <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of saved dataframes:'</span>, <span class="bu">len</span>(dfs))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>dfs <span class="op">=</span> [] <span class="co"># this is an empty list to hold all of our dataframes</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'data/*.csv'</span>)):</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>  data <span class="op">=</span> pd.read_csv(csv)</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>  <span class="bu">print</span>(counter, <span class="st">'Saving'</span>, <span class="bu">len</span>(data), <span class="st">'rows from'</span>, csv)</span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>  dfs.append(data)</span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>  counter <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of saved dataframes:'</span>, <span class="bu">len</span>(dfs))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -542,8 +542,8 @@ True.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat(dfs, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of rows in df:'</span>, <span class="bu">len</span>(df))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>df <span class="op">=</span> pd.concat(dfs, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of rows in df:'</span>, <span class="bu">len</span>(df))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -593,11 +593,11 @@ True.</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'data/*.csv'</span>)):</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> pd.read_csv(____)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(csv, data[<span class="st">'____'</span>].____())</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    </span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'data/*.csv'</span>)):</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>    data <span class="op">=</span> pd.read_csv(____)</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>    <span class="bu">print</span>(csv, data[<span class="st">'____'</span>].____())</span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>    </span></code></pre>
 </div>
 </div>
 </div>
@@ -612,11 +612,11 @@ True.</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'data/*.csv'</span>)):</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> pd.read_csv(csv)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(csv, data[<span class="st">'ytd'</span>].<span class="bu">min</span>())</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    </span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'data/*.csv'</span>)):</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>    data <span class="op">=</span> pd.read_csv(csv)</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>    <span class="bu">print</span>(csv, data[<span class="st">'ytd'</span>].<span class="bu">min</span>())</span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>    </span></code></pre>
 </div>
 </div>
 </div>
@@ -653,16 +653,16 @@ the same columns so they will concatenate together cleanly using
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>dfs <span class="op">=</span> []</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'outputs/data*.csv'</span>)):</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> pd.read_csv(csv)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    dfs.append(data)</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>new_df <span class="op">=</span> pd.concat(dfs, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    </span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>dfs <span class="op">=</span> []</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'outputs/data*.csv'</span>)):</span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>    data <span class="op">=</span> pd.read_csv(csv)</span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>    dfs.append(data)</span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>    </span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>new_df <span class="op">=</span> pd.concat(dfs, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a>    </span></code></pre>
 </div>
 </div>
 </div>
@@ -744,7 +744,7 @@ files.</li>
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/07-looping-data-sets.html",
   "dateCreated": "2018-04-12",
   "dateModified": "2024-02-09",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

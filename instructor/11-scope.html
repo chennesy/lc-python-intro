@@ -387,16 +387,16 @@ program in which a variable is visible is called its <em>scope</em>.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>initial_fine <span class="op">=</span> <span class="fl">0.25</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>late_fine <span class="op">=</span> <span class="fl">0.50</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calc_fine(days_overdue):</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> days_overdue <span class="op">&lt;=</span> <span class="dv">10</span>:</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        days_overdue <span class="op">=</span>  days_overdue <span class="op">*</span> initial_fine</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        days_overdue <span class="op">=</span> (days_overdue <span class="op">*</span> initial_fine) <span class="op">+</span> (days_overdue <span class="op">*</span> late_fine)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> days_overdue</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    </span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>initial_fine <span class="op">=</span> <span class="fl">0.25</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>late_fine <span class="op">=</span> <span class="fl">0.50</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="kw">def</span> calc_fine(days_overdue):</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    <span class="cf">if</span> days_overdue <span class="op">&lt;=</span> <span class="dv">10</span>:</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>        days_overdue <span class="op">=</span>  days_overdue <span class="op">*</span> initial_fine</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>        days_overdue <span class="op">=</span> (days_overdue <span class="op">*</span> initial_fine) <span class="op">+</span> (days_overdue <span class="op">*</span> late_fine)</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>    <span class="cf">return</span> days_overdue</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>    </span></code></pre>
 </div>
 <ul><li>
 <code>initial_fine</code> and <code>late_fine</code> are <em>global
@@ -409,10 +409,10 @@ so acts as a local variable.</li>
 </ul><div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fine <span class="op">=</span> calc_fine(<span class="dv">12</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Fine owed:'</span>, fine)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Fine rates:'</span>, initial_fine, late_fine)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Days overdue:'</span>, days_overdue)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>fine <span class="op">=</span> calc_fine(<span class="dv">12</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Fine owed:'</span>, fine)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Fine rates:'</span>, initial_fine, late_fine)</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Days overdue:'</span>, days_overdue)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -444,13 +444,13 @@ NameError: name 'days_overdue' is not defined</code></pre>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>limit <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> clip(value):</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">min</span>(<span class="bu">max</span>(<span class="fl">0.0</span>, value), limit)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> <span class="op">-</span><span class="fl">22.5</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(clip(value))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>limit <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">def</span> clip(value):</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">min</span>(<span class="bu">max</span>(<span class="fl">0.0</span>, value), limit)</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>value <span class="op">=</span> <span class="op">-</span><span class="fl">22.5</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="bu">print</span>(clip(value))</span></code></pre>
 </div>
 </div>
 </div>
@@ -465,23 +465,23 @@ NameError: name 'days_overdue' is not defined</code></pre>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># limit = ---</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># value = ---</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>limit <span class="op">=</span> <span class="dv">100</span>   </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> clip(value):  </span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">min</span>(<span class="bu">max</span>(<span class="fl">0.0</span>, value), limit)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># limit = 100</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># value = ---</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> <span class="op">-</span><span class="fl">22.5</span>    <span class="co"># value = -22.5, limit = 100</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(clip(value))   <span class="co"># result is 0.0</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co"># value = -22.5</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># limit = 100</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># limit = ---</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co"># value = ---</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>limit <span class="op">=</span> <span class="dv">100</span>   </span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="kw">def</span> clip(value):  </span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">min</span>(<span class="bu">max</span>(<span class="fl">0.0</span>, value), limit)</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co"># limit = 100</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co"># value = ---</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a>value <span class="op">=</span> <span class="op">-</span><span class="fl">22.5</span>    <span class="co"># value = -22.5, limit = 100</span></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="bu">print</span>(clip(value))   <span class="co"># result is 0.0</span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="co"># value = -22.5</span></span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a><span class="co"># limit = 100</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -504,10 +504,10 @@ NameError: name 'days_overdue' is not defined</code></pre>
 </ol><div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> another_function</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Syntax errors are annoying."</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"But at least Python tells us about them!"</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"So they are usually not too hard to fix."</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> another_function</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Syntax errors are annoying."</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"But at least Python tells us about them!"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"So they are usually not too hard to fix."</span>)</span></code></pre>
 </div>
 </div>
 </div>
@@ -550,10 +550,10 @@ IndentationError: unexpected indent  </code></pre>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> another_function():</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Syntax errors are annoying."</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"But at least Python tells us about them!"</span>)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"So they are usually not too hard to fix."</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="kw">def</span> another_function():</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Syntax errors are annoying."</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"But at least Python tells us about them!"</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"So they are usually not too hard to fix."</span>)</span></code></pre>
 </div>
 </div>
 </div>
@@ -693,7 +693,7 @@ variable.</li>
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/instructor/11-scope.html",
   "dateCreated": "2018-04-12",
   "dateModified": "2023-11-30",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

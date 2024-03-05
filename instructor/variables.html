@@ -389,8 +389,8 @@ the name <code>Ahmed</code> in single quote to a variable
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">42</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>first_name <span class="op">=</span> <span class="st">'Ahmed'</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>first_name <span class="op">=</span> <span class="st">'Ahmed'</span></span></code></pre>
 </div>
 <ul><li>Variable names:
 <ul><li>cannot start with a digit</li>
@@ -412,7 +412,7 @@ function, and you can separate multiple items with commas.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(first_name, <span class="st">'is'</span>, age, <span class="st">'years old'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="bu">print</span>(first_name, <span class="st">'is'</span>, age, <span class="st">'years old'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -426,7 +426,7 @@ Python reports an error called a <code>NameError</code>.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eye_color)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="bu">print</span>(eye_color)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -442,13 +442,12 @@ NameError: name 'eye_color' is not defined</code></pre>
 this case it tells us that the <code>eye_color</code> variable is not
 defined. NameErrors often refer to variables that haven’t been created
 or assigned yet.</p>
-<div id="variables-persist-between-cells" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="variables-persist-between-cells" class="callout-inner">
-<h3 class="callout-title">Variables Persist Between Cells<a class="anchor" aria-label="anchor" href="#variables-persist-between-cells"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="variables-persist-between-cells">Variables Persist Between Cells<a class="anchor" aria-label="anchor" href="#variables-persist-between-cells"></a></h3>
 <div class="callout-content">
 <p>Variables defined in one Notebook cell are available in all other
 cells once they have been executed, so the location of cells in the
@@ -468,8 +467,8 @@ that value within a new variable assignment.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> age <span class="op">+</span> <span class="dv">3</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Age in three years:'</span>, age)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>age <span class="op">=</span> age <span class="op">+</span> <span class="dv">3</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Age in three years:'</span>, age)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -490,10 +489,10 @@ out an object’s type.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="fl">140.2</span>))</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(age))</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(first_name))</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="bu">print</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="fl">140.2</span>))</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(age))</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(first_name))</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="bu">print</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -521,7 +520,7 @@ objects.<a class="anchor" aria-label="anchor" href="#types-control-what-operatio
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">5</span> <span class="op">-</span> <span class="dv">3</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">5</span> <span class="op">-</span> <span class="dv">3</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -531,7 +530,7 @@ objects.<a class="anchor" aria-label="anchor" href="#types-control-what-operatio
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'hello'</span> <span class="op">-</span> <span class="st">'h'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'hello'</span> <span class="op">-</span> <span class="st">'h'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -554,8 +553,8 @@ refer to the character at that position.</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>library <span class="op">=</span> <span class="st">'Alexandria'</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(library[<span class="dv">0</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>library <span class="op">=</span> <span class="st">'Alexandria'</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="bu">print</span>(library[<span class="dv">0</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -573,7 +572,7 @@ string we want.</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(library[<span class="dv">0</span>:<span class="dv">3</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="bu">print</span>(library[<span class="dv">0</span>:<span class="dv">3</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -597,7 +596,7 @@ string.</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(<span class="st">'Babel'</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(<span class="st">'Babel'</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -618,10 +617,10 @@ assignment of <code>age</code> to <code>50</code>, for example:</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">42</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>older_age <span class="op">=</span> age <span class="op">+</span> <span class="dv">3</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">50</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'older age is'</span>, older_age, <span class="st">'and age is'</span>, age)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>older_age <span class="op">=</span> age <span class="op">+</span> <span class="dv">3</span></span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'older age is'</span>, older_age, <span class="st">'and age is'</span>, age)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -652,11 +651,11 @@ three lines of this program do?</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1.0</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">3.0</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>swap <span class="op">=</span> x</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> y</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> swap</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">3.0</span></span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>swap <span class="op">=</span> x</span>
+<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a>x <span class="op">=</span> y</span>
+<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a>y <span class="op">=</span> swap</span></code></pre>
 </div>
 </div>
 </div>
@@ -692,9 +691,9 @@ your prediction.)</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>initial <span class="op">=</span> <span class="st">"left"</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>position <span class="op">=</span> initial</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>initial <span class="op">=</span> <span class="st">"right"</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>initial <span class="op">=</span> <span class="st">"left"</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>position <span class="op">=</span> initial</span>
+<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a>initial <span class="op">=</span> <span class="st">"right"</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -709,10 +708,10 @@ your prediction.)</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>initial <span class="op">=</span> <span class="st">"left"</span>  <span class="co"># Initial is assigned the string "left"</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>position <span class="op">=</span> initial  <span class="co"># Position is assigned the variable initial, currently "left"</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>initial <span class="op">=</span> <span class="st">"right"</span>  <span class="co"># Initial is assigned the string "right"</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(position)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>initial <span class="op">=</span> <span class="st">"left"</span>  <span class="co"># Initial is assigned the string "left"</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>position <span class="op">=</span> initial  <span class="co"># Position is assigned the variable initial, currently "left"</span></span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>initial <span class="op">=</span> <span class="st">"right"</span>  <span class="co"># Initial is assigned the string "right"</span></span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a><span class="bu">print</span>(position)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -749,8 +748,8 @@ be treated like strings.</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">123</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">1</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">123</span></span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">1</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -773,8 +772,8 @@ be treated like strings.</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>library_name <span class="op">=</span> <span class="st">'Library of Babel'</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'library_name[1:3] is:'</span>, library_name[<span class="dv">1</span>:<span class="dv">3</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>library_name <span class="op">=</span> <span class="st">'Library of Babel'</span></span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'library_name[1:3] is:'</span>, library_name[<span class="dv">1</span>:<span class="dv">3</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -836,7 +835,7 @@ and ending a distance of the absolute value of
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="fl">3.4</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="fl">3.4</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -871,8 +870,8 @@ necessary.</p>
 <div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> <span class="fl">3.25</span> <span class="op">+</span> <span class="dv">4</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result, <span class="st">'is'</span>, <span class="bu">type</span>(result))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a>result <span class="op">=</span> <span class="fl">3.25</span> <span class="op">+</span> <span class="dv">4</span></span>
+<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a><span class="bu">print</span>(result, <span class="st">'is'</span>, <span class="bu">type</span>(result))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -969,7 +968,7 @@ object.</li>
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/instructor/variables.html",
   "dateCreated": "2018-04-12",
   "dateModified": "2024-02-27",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

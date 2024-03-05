@@ -374,17 +374,17 @@ DataFrame, let’s do that now:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>dfs <span class="op">=</span> [] </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> glob.glob(<span class="st">'data/*.csv'</span>):</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> pd.read_csv(csv)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    dfs.append(data)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat(dfs, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="im">import</span> glob</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>dfs <span class="op">=</span> [] </span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> glob.glob(<span class="st">'data/*.csv'</span>):</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>    data <span class="op">=</span> pd.read_csv(csv)</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>    dfs.append(data)</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>df <span class="op">=</span> pd.concat(dfs, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>df.head()</span></code></pre>
 </div>
 <div class="section level3">
 <h3 id="use-tail-to-look-at-the-end-of-the-dataframe">Use <code>tail()</code> to look at the end of the DataFrame<a class="anchor" aria-label="anchor" href="#use-tail-to-look-at-the-end-of-the-dataframe"></a></h3>
@@ -396,7 +396,7 @@ the the default of five rows doesn’t work for you.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.tail(<span class="dv">10</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>df.tail(<span class="dv">10</span>)</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -406,7 +406,7 @@ to look at a specific range of rows in a DataFrame.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">50</span>:<span class="dv">60</span>] <span class="co">#look at rows 50 to 59</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>df[<span class="dv">50</span>:<span class="dv">60</span>] <span class="co">#look at rows 50 to 59</span></span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -416,7 +416,7 @@ similar syntax, but refer to the name the column of interest.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'year'</span>] <span class="co">#look at the year column</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>df[<span class="st">'year'</span>] <span class="co">#look at the year column</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -440,9 +440,9 @@ ranges.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'first row:'</span>, df[<span class="st">'year'</span>][<span class="dv">0</span>])</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'rows 100 to 102:'</span>) <span class="co">#adding a new print statement to create a new line</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">'year'</span>][<span class="dv">100</span>:<span class="dv">103</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'first row:'</span>, df[<span class="st">'year'</span>][<span class="dv">0</span>])</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'rows 100 to 102:'</span>) <span class="co">#adding a new print statement to create a new line</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">'year'</span>][<span class="dv">100</span>:<span class="dv">103</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -459,7 +459,7 @@ different type of object than a full DataFrame.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(df[<span class="st">'year'</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="bu">type</span>(df[<span class="st">'year'</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -483,8 +483,8 @@ example, we can look at the maximum and minimum values in the
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'max year:'</span>, df[<span class="st">'year'</span>].<span class="bu">max</span>())</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'min year:'</span>, df[<span class="st">'year'</span>].<span class="bu">min</span>())</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'max year:'</span>, df[<span class="st">'year'</span>].<span class="bu">max</span>())</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'min year:'</span>, df[<span class="st">'year'</span>].<span class="bu">min</span>())</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -501,7 +501,7 @@ many different branches are present in the dataset this way.</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'branch'</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>df[<span class="st">'branch'</span>]</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -526,8 +526,8 @@ unique values are present.</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of unique branches:'</span>, df[<span class="st">'branch'</span>].nunique())</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">'branch'</span>].unique())</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of unique branches:'</span>, df[<span class="st">'branch'</span>].nunique())</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">'branch'</span>].unique())</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -572,7 +572,7 @@ column name as its argument and then for each group we can sum the
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'branch'</span>)[<span class="st">'ytd'</span>].<span class="bu">sum</span>()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>df.groupby(<span class="st">'branch'</span>)[<span class="st">'ytd'</span>].<span class="bu">sum</span>()</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -603,8 +603,8 @@ from the highest values down…</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>circ_by_branch <span class="op">=</span> df.groupby(<span class="st">'branch'</span>)[<span class="st">'ytd'</span>].<span class="bu">sum</span>()</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>circ_by_branch.sort_values(ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>circ_by_branch <span class="op">=</span> df.groupby(<span class="st">'branch'</span>)[<span class="st">'ytd'</span>].<span class="bu">sum</span>()</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>circ_by_branch.sort_values(ascending<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -631,8 +631,8 @@ chain together many methods into a single line of code.</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>circ_by_year_branch <span class="op">=</span> df.groupby([<span class="st">'year'</span>, <span class="st">'branch'</span>])[<span class="st">'ytd'</span>].<span class="bu">sum</span>().sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>circ_by_year_branch.head(<span class="dv">5</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>circ_by_year_branch <span class="op">=</span> df.groupby([<span class="st">'year'</span>, <span class="st">'branch'</span>])[<span class="st">'ytd'</span>].<span class="bu">sum</span>().sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>circ_by_year_branch.head(<span class="dv">5</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -653,10 +653,10 @@ two-dimensional numerical indexes with <code>.iloc[]</code>.</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print values in the 1st and 2nd to last columns in the first row</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Branch:'</span>, df.iloc[<span class="dv">0</span>,<span class="dv">0</span>], <span class="st">'</span><span class="ch">\n</span><span class="st">YTD circ:'</span>, df.iloc[<span class="dv">0</span>,<span class="op">-</span><span class="dv">2</span>])</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># '\n' prints a linebreak</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="co"># print values in the 1st and 2nd to last columns in the first row</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Branch:'</span>, df.iloc[<span class="dv">0</span>,<span class="dv">0</span>], <span class="st">'</span><span class="ch">\n</span><span class="st">YTD circ:'</span>, df.iloc[<span class="dv">0</span>,<span class="op">-</span><span class="dv">2</span>])</span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a><span class="co"># '\n' prints a linebreak</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -671,8 +671,8 @@ index.</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print the same values as above, using the column names</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Branch:'</span>, df.loc[<span class="dv">0</span>,<span class="st">'branch'</span>], <span class="st">'</span><span class="ch">\n</span><span class="st">YTD circ:'</span>, df.loc[<span class="dv">0</span>, <span class="st">'ytd'</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="co"># print the same values as above, using the column names</span></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Branch:'</span>, df.loc[<span class="dv">0</span>,<span class="st">'branch'</span>], <span class="st">'</span><span class="ch">\n</span><span class="st">YTD circ:'</span>, df.loc[<span class="dv">0</span>, <span class="st">'ytd'</span>])</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -691,8 +691,8 @@ format in our Jupyter notebook.</p>
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>circ_df <span class="op">=</span> circ_by_year_branch.to_frame()</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>circ_df.head(<span class="dv">5</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>circ_df <span class="op">=</span> circ_by_year_branch.to_frame()</span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>circ_df.head(<span class="dv">5</span>)</span></code></pre>
 </div>
 <div class="section level3">
 <h3 id="save-to-csv">Save to CSV<a class="anchor" aria-label="anchor" href="#save-to-csv"></a></h3>
@@ -703,19 +703,18 @@ sure to add the .csv filetype to your file name.</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>circ_df.to_csv(<span class="st">'high_usage.csv'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>circ_df.to_csv(<span class="st">'high_usage.csv'</span>)</span></code></pre>
 </div>
 <p>You should now see, in the JupyterLab file explorer to the left, the
 new CSV file. If you don’t see it, you can hit the refresh icon (it
 looks like a spinning arrow) above the files pane. You can double-click
 on the CSV to preview the full spreadsheet in a new Jupyter tab.</p>
-<div id="save-pickle-files" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="save-pickle-files" class="callout-inner">
-<h3 class="callout-title">Save pickle files<a class="anchor" aria-label="anchor" href="#save-pickle-files"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="save-pickle-files">Save pickle files<a class="anchor" aria-label="anchor" href="#save-pickle-files"></a></h3>
 <div class="callout-content">
 <p>Working with your data in CSVs (especially via tools like Microsoft
 Excel) can introduce reproducibility issues. For example, you’ll
@@ -734,7 +733,7 @@ efficiently and without losing or corrupting your data.</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>circ_df.to_pickle(<span class="st">'high_usage.pkl'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a>circ_df.to_pickle(<span class="st">'high_usage.pkl'</span>)</span></code></pre>
 </div>
 <p>You can only “see” the data in a pickle file by reloading it into
 Python. This is a great way to save a DataFrame that you created in one
@@ -743,8 +742,8 @@ a colleague who’s familiar with Python.</p>
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>new_df <span class="op">=</span> pd.read_pickle(<span class="st">'high_usage.pkl'</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>new_df.head()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>new_df <span class="op">=</span> pd.read_pickle(<span class="st">'high_usage.pkl'</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>new_df.head()</span></code></pre>
 </div>
 </div>
 </div>
@@ -830,7 +829,7 @@ and <code>.to_pickle()</code>.</li>
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/08-pandas.html",
   "dateCreated": "2018-04-12",
   "dateModified": "2024-02-26",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

@@ -337,7 +337,7 @@ files.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Looping Over Data Sets</h1>
-        <p>Last updated on 2024-03-05 |
+        <p>Last updated on 2024-03-08 |
         
         <a href="https://github.com/librarycarpentry/lc-python-intro/edit/main/episodes/looping-data-sets.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -414,12 +414,14 @@ pattern matching options:</p>
 <code>glob</code> to match file patterns. For example,
 <code>glob.glob('*.txt')</code> would match all files in the current
 directory with names that end with <code>.txt</code>.</p>
-<p>Let’s create a list of the usage data CSV files.</p>
+<p>Let’s create a list of the usage data CSV files. Because the
+<code>.glob()</code> argument includes a filepath in single quotes,
+we’ll use double quotes around our f-string.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="im">import</span> glob</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'all csv files in data directory:'</span>, glob.glob(<span class="st">'data/*.csv'</span>))</span></code></pre>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"all csv files in data directory: </span><span class="sc">{</span>glob<span class="sc">.</span>glob(<span class="st">'data/*.csv'</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -431,10 +433,10 @@ files.<a class="anchor" aria-label="anchor" href="#use-glob-and-for-to-process-b
 </h2>
 <hr class="half-width"><p>Now we can use glob in a <code>for</code> loop to create dataframes
 from all of the CSV files in the <code>data</code> directory. To use
-tools like <code>glob</code> it helps a lot if files are named and
-stored consistently so that simple patterns will find the right data.
-You can learn more about how to name files to improve
-machine-readability from the <a href="https://help.osf.io/article/146-file-naming" class="external-link">Open Science
+tools like <code>glob</code> it helps if files are named and stored
+consistently so that simple patterns will find the right data. You can
+learn more about how to name files to improve machine-readability from
+the <a href="https://help.osf.io/article/146-file-naming" class="external-link">Open Science
 Foundation article on file naming</a>.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -496,20 +498,22 @@ data/2022_circ.csv 6336579</code></pre>
 we cycle through them, but it would be more convenient if we saved all
 of the yearly usage data in these CSV files into dataframes that we
 could work with later on. We can do that by using a list “accumulator”
-(as we covered in the last episode).</p>
+(as we covered in the last episode) and appending each dataframe to an
+empty list. You can create an empty list by assigning a variable to
+empty square brackets before the loop begins.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>dfs <span class="op">=</span> [] <span class="co"># this is an empty list to hold all of our dataframes</span></span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>dfs <span class="op">=</span> [] <span class="co"># an empty list to hold all of our dataframes</span></span>
 <span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="cf">for</span> csv <span class="kw">in</span> <span class="bu">sorted</span>(glob.glob(<span class="st">'data/*.csv'</span>)):</span>
 <span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>  data <span class="op">=</span> pd.read_csv(csv)</span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>  <span class="bu">print</span>(counter, <span class="st">'Saving'</span>, <span class="bu">len</span>(data), <span class="st">'rows from'</span>, csv)</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>counter<span class="sc">}</span><span class="ss"> Saving </span><span class="sc">{</span><span class="bu">len</span>(data)<span class="sc">}</span><span class="ss"> rows from </span><span class="sc">{</span>csv<span class="sc">}</span><span class="ss">'</span>)</span>
 <span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>  dfs.append(data)</span>
 <span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>  counter <span class="op">+=</span> <span class="dv">1</span></span>
 <span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a></span>
-<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of saved dataframes:'</span>, <span class="bu">len</span>(dfs))</span></code></pre>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Number of saved dataframes: </span><span class="sc">{</span><span class="bu">len</span>(dfs)<span class="sc">}</span><span class="ss">'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -545,12 +549,12 @@ True.</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>df <span class="op">=</span> pd.concat(dfs, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of rows in df:'</span>, <span class="bu">len</span>(df))</span></code></pre>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="ss">f'Number of rows in df: </span><span class="sc">{</span><span class="bu">len</span>(df)<span class="sc">}</span><span class="ss">'</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Number of rows in df: 1003</code></pre>
+<pre class="output" tabindex="0"><code><span><span class="st">'Number of rows in df: 1003'</span></span></code></pre>
 </div>
 <div id="determining-matches" class="callout challenge">
 <div class="callout-square">
@@ -745,7 +749,7 @@ files.</li>
   "url": "https://librarycarpentry.github.io/lc-python-intro/instructor/looping-data-sets.html",
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/instructor/looping-data-sets.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2024-03-05",
+  "dateModified": "2024-03-08",
   "datePublished": "2024-03-08"
 }
 

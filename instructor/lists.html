@@ -177,14 +177,8 @@
       <div class="accordion-body">
         <ul><li><a href="#a-list-stores-many-values-in-a-single-structure.">A list stores many values in a single structure.</a></li>
 <li><a href="#use-an-items-index-to-fetch-it-from-a-list.">Use an item’s index to fetch it from a list.</a></li>
-<li><a href="#list-values-can-be-replaced-by-assigning-them-with-their-index.">List values can be replaced by assigning them with their index.</a></li>
-<li><a href="#view-a-slice-of-a-list-with-index-values.">View a slice of a list with index values.</a></li>
-<li><a href="#character-strings-are-immutable.">Character strings are immutable.</a></li>
-<li><a href="#you-can-create-an-empty-list-for-later-use.">You can create an empty list for later use.</a></li>
+<li><a href="#reassign-list-values-with-their-index.">Reassign list values with their index.</a></li>
 <li><a href="#lists-may-contain-values-of-different-types.">Lists may contain values of different types.</a></li>
-<li><a href="#you-can-copy-lists-but-not-using-straightforward-variable-assignment.">You can copy lists, but not using straightforward variable
-assignment.</a></li>
-<li><a href="#indexing-beyond-the-end-of-the-collection-is-an-error.">Indexing beyond the end of the collection is an error.</a></li>
 <li><a href="#appending-items-to-a-list-lengthens-it.">Appending items to a list lengthens it.</a></li>
 <li><a href="#use-del-to-remove-items-from-a-list-entirely.">Use <code>del</code> to remove items from a list entirely.</a></li>
         </ul></div><!--/div.accordion-body-->
@@ -341,7 +335,7 @@ assignment.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Lists</h1>
-        <p>Last updated on 2024-03-05 |
+        <p>Last updated on 2024-03-08 |
         
         <a href="https://github.com/librarycarpentry/lc-python-intro/edit/main/episodes/lists.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -397,51 +391,51 @@ with commas in between.</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>zip_codes <span class="op">=</span> [<span class="dv">60625</span>, <span class="dv">60827</span>, <span class="dv">60632</span>, <span class="dv">60644</span>, <span class="dv">60634</span>]</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Zip codes:'</span>, zip_codes)</span></code></pre>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ss">f'Zip codes: </span><span class="sc">{</span>zip_codes<span class="sc">}</span><span class="ss">'</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Zip codes: [60625, 60827, 60632, 60644, 60634]</code></pre>
+<pre class="output" tabindex="0"><code><span><span class="st">'Zip codes: [60625, 60827, 60632, 60644, 60634]'</span></span></code></pre>
 </div>
 <p>We can use <code>len()</code> to find out how many values are in a
 list.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of zip codes:'</span>, <span class="bu">len</span>(zip_codes))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ss">f'Number of zip codes: </span><span class="sc">{</span><span class="bu">len</span>(zip_codes)<span class="sc">}</span><span class="ss">'</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>Number of zip codes: 5</code></pre>
+<pre class="output" tabindex="0"><code><span><span class="st">'Number of zip codes: 5'</span></span></code></pre>
 </div>
 </section><section id="use-an-items-index-to-fetch-it-from-a-list."><h2 class="section-heading">Use an item’s index to fetch it from a list.<a class="anchor" aria-label="anchor" href="#use-an-items-index-to-fetch-it-from-a-list."></a>
 </h2>
 <hr class="half-width"><p>In the same way we used index numbers for strings, we can reference
-elements in a list.</p>
+elements and slices in a list.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'1st item of zip_codes (0th index):'</span>, zip_codes[<span class="dv">0</span>])</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'5th item of zip_codes (4th index):'</span>, zip_codes[<span class="dv">4</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'1st item of zip_codes: </span><span class="sc">{</span>zip_codes[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'The first three zip codes: </span><span class="sc">{</span>zip_codes[<span class="dv">0</span>:<span class="dv">3</span>]<span class="sc">}</span><span class="ss">'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>1st item of zip_codes (0th index): 60625
-5th item of zip_codes (4th index): 60634</code></pre>
+<pre class="output" tabindex="0"><code>1st item of zip_codes: 60625
+The first three zip codes: [60625, 60827, 60632]</code></pre>
 </div>
-</section><section id="list-values-can-be-replaced-by-assigning-them-with-their-index."><h2 class="section-heading">List values can be replaced by assigning them with their index.<a class="anchor" aria-label="anchor" href="#list-values-can-be-replaced-by-assigning-them-with-their-index."></a>
+</section><section id="reassign-list-values-with-their-index."><h2 class="section-heading">Reassign list values with their index.<a class="anchor" aria-label="anchor" href="#reassign-list-values-with-their-index."></a>
 </h2>
 <hr class="half-width"><p>Use an index value along with your list variable to replace a value
 from the list.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'zip_codes was:'</span>, zip_codes)</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'zip_codes was: </span><span class="sc">{</span>zip_codes<span class="sc">}</span><span class="ss">'</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>zip_codes[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">60640</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'zip_codes is now:'</span>, zip_codes)</span></code></pre>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'zip_codes is now: </span><span class="sc">{</span>zip_codes<span class="sc">}</span><span class="ss">'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -449,48 +443,24 @@ from the list.</p>
 <pre class="output" tabindex="0"><code>zip_codes was: [60625, 60827, 60632, 60644, 60634]
 zip_codes is now: [60640, 60827, 60632, 60644, 60634]</code></pre>
 </div>
-</section><section id="view-a-slice-of-a-list-with-index-values."><h2 class="section-heading">View a slice of a list with index values.<a class="anchor" aria-label="anchor" href="#view-a-slice-of-a-list-with-index-values."></a>
-</h2>
-<hr class="half-width"><p>We can use the same syntax to view a part of a list by referencing
-its index values.</p>
-<div class="codewrapper sourceCode" id="cb9">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The first three zip codes:'</span>, zip_codes[<span class="dv">0</span>:<span class="dv">3</span>])</span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>The first three zip codes: [60640, 60827, 60632]</code></pre>
-</div>
-</section><section id="character-strings-are-immutable."><h2 class="section-heading">Character strings are immutable.<a class="anchor" aria-label="anchor" href="#character-strings-are-immutable."></a>
-</h2>
-<hr class="half-width"><p>Unlike lists, we cannot change the characters in a string using its
+<div class="section level3">
+<h3 id="character-strings-are-immutable-">Character strings are immutable.<a class="anchor" aria-label="anchor" href="#character-strings-are-immutable-"></a></h3>
+<p>Unlike lists, we cannot change the characters in a string using its
 index value. In other words strings are <em>immutable</em> (cannot be
 changed in-place after creation), while lists are <em>mutable</em>: they
 can be modified in place. Python considers the string to be a single
 value with parts, not a collection of values.</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>branch_library <span class="op">=</span> <span class="st">'Ulbany Park'</span> <span class="co"># misspelled Albany</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>branch_library[<span class="dv">0</span>] <span class="op">=</span> <span class="st">'A'</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>branch_library <span class="op">=</span> <span class="st">'Ulbany Park'</span> <span class="co"># misspelled Albany</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>branch_library[<span class="dv">0</span>] <span class="op">=</span> <span class="st">'A'</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="error" tabindex="0"><code>TypeError: 'str' object does not support item assignment</code></pre>
 </div>
-</section><section id="you-can-create-an-empty-list-for-later-use."><h2 class="section-heading">You can create an empty list for later use.<a class="anchor" aria-label="anchor" href="#you-can-create-an-empty-list-for-later-use."></a>
-</h2>
-<hr class="half-width"><p>Use <code>[]</code> on its own to represent a list that doesn’t
-contain any values. This is helpful as a starting point for collecting
-values (<a href="06-for-loops.html">which we will see in our episode on
-For Loops</a>).</p>
-<div class="codewrapper sourceCode" id="cb13">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>future_list <span class="op">=</span> []</span></code></pre>
 </div>
 </section><section id="lists-may-contain-values-of-different-types."><h2 class="section-heading">Lists may contain values of different types.<a class="anchor" aria-label="anchor" href="#lists-may-contain-values-of-different-types."></a>
 </h2>
@@ -498,82 +468,16 @@ For Loops</a>).</p>
 (including other lists!). If you’re dealing with a list within a list
 you can continue to use the square bracket notation to reference
 specific items.</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>mixed_list <span class="op">=</span> [<span class="st">'word'</span>, <span class="dv">3</span>, <span class="fl">10.2</span>, [<span class="st">'list'</span>, <span class="st">'of'</span>, <span class="st">'items'</span>]]</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'1st word in sub-list:'</span>, mixed_list[<span class="dv">3</span>][<span class="dv">0</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>mixed_list <span class="op">=</span> [<span class="st">'word'</span>, <span class="dv">3</span>, <span class="fl">10.2</span>, [<span class="st">'list'</span>, <span class="st">'of'</span>, <span class="st">'items'</span>]]</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'1st word in sublist: </span><span class="sc">{</span>mixed_list[<span class="dv">3</span>][<span class="dv">0</span>]<span class="sc">}</span><span class="ss">'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>1st word in sub-list: list</code></pre>
-</div>
-</section><section id="you-can-copy-lists-but-not-using-straightforward-variable-assignment."><h2 class="section-heading">You can copy lists, but not using straightforward variable
-assignment.<a class="anchor" aria-label="anchor" href="#you-can-copy-lists-but-not-using-straightforward-variable-assignment."></a>
-</h2>
-<hr class="half-width"><p>Remember our sticky note analogy? Well, the variable names you assign
-to lists are also like sticky notes that you’re attaching to a specific
-collection of values. When you change the values in the underlying list,
-it will change the values associated with any variables that have been
-assigned to the collection.</p>
-<div class="codewrapper sourceCode" id="cb16">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>]</span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>numbers_dupe <span class="op">=</span> numbers</span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="co">#change the first value from 1 to 100</span></span>
-<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>numbers_dupe[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a><span class="bu">print</span>(numbers)</span>
-<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a><span class="bu">print</span>(numbers_dupe)</span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[100, 2, 3, 4]
-[100, 2, 3, 4]</code></pre>
-</div>
-<p>In the example above, the <code>numbers</code> variable doesn’t
-retain its original values of [1,2,3,4] because when we changed the
-value of the 1st element of the <code>numbers_dupe</code> list -
-<code>numbers_dupe[0]</code> - it also updated the value in
-<code>numbers</code>. This behavior is due to the list being a mutable
-(changeable) object. When we change the value of the first item in the
-list, we’re changing the list object itself. We could assign dozens of
-variables (sticky notes) to that list object, but they’re all pointing
-to the same thing.</p>
-<p>To account for this we can use the <code>.copy()</code> method which
-will create a new list object that is no longer connected with the
-original list.</p>
-<div class="codewrapper sourceCode" id="cb18">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>]</span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>numbers_dupe <span class="op">=</span> numbers.copy()</span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>numbers_dupe[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">200</span></span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="bu">print</span>(numbers)</span>
-<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a><span class="bu">print</span>(numbers_dupe)</span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[1, 2, 3, 4]
-[200, 2, 3, 4]</code></pre>
-</div>
-</section><section id="indexing-beyond-the-end-of-the-collection-is-an-error."><h2 class="section-heading">Indexing beyond the end of the collection is an error.<a class="anchor" aria-label="anchor" href="#indexing-beyond-the-end-of-the-collection-is-an-error."></a>
-</h2>
-<hr class="half-width"><p>Python reports an <code>IndexError</code> if we attempt to access a
-value that doesn’t exist.</p>
-<div class="codewrapper sourceCode" id="cb20">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'99th element of branch_library is:'</span>, branch_library[<span class="dv">99</span>])</span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>IndexError: string index out of range</code></pre>
+<pre class="output" tabindex="0"><code>1st word in sublist: list</code></pre>
 </div>
 </section><section id="appending-items-to-a-list-lengthens-it."><h2 class="section-heading">Appending items to a list lengthens it.<a class="anchor" aria-label="anchor" href="#appending-items-to-a-list-lengthens-it."></a>
 </h2>
@@ -581,12 +485,12 @@ value that doesn’t exist.</p>
 In Python, we would call <code>.append()</code> a <em>method</em> of the
 list object. You can use the syntax of <code>object.method()</code> to
 call methods.</p>
-<div class="codewrapper sourceCode" id="cb22">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'zip_codes was:'</span>, zip_codes)</span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>zip_codes.append(<span class="dv">60647</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'zip_codes is now:'</span>, zip_codes)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'zip_codes was:</span><span class="sc">{</span>zip_codes<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>zip_codes.append(<span class="dv">60647</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'zip_codes is now: </span><span class="sc">{</span>zip_codes<span class="sc">}</span><span class="ss">'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -603,13 +507,13 @@ not a method, but a statement in Python. In the example below,
 numbers. This means that the <code>primes</code> variable will be
 reassigned when you use the <code>del</code> statement, without needing
 to use an assignment operator (e.g., <code>primes = ...</code>) .</p>
-<div class="codewrapper sourceCode" id="cb24">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>primes <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>]</span>
-<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'primes before removing last item:'</span>, primes)</span>
-<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a><span class="kw">del</span> primes[<span class="dv">4</span>]</span>
-<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'primes after removing last item:'</span>, primes)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>primes <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>]</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'primes before removing last item: </span><span class="sc">{</span>primes<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="kw">del</span> primes[<span class="dv">4</span>]</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'primes after removing last item: </span><span class="sc">{</span>primes<span class="sc">}</span><span class="ss">'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -627,16 +531,16 @@ primes after removing last item: [2, 3, 5, 7]</code></pre>
 <div class="callout-content">
 <p>Fill in the blanks so that the program below produces the output
 shown.</p>
-<div class="codewrapper sourceCode" id="cb26">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>values <span class="op">=</span> ____</span>
-<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>values.____(<span class="dv">1</span>)</span>
-<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>values.____(<span class="dv">3</span>)</span>
-<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>values.____(<span class="dv">5</span>)</span>
-<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'first time:'</span>, values)</span>
-<span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a>values <span class="op">=</span> values[____]</span>
-<span id="cb26-7"><a href="#cb26-7" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'second time:'</span>, values)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>values <span class="op">=</span> ____</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>values.____(<span class="dv">1</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>values.____(<span class="dv">3</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>values.____(<span class="dv">5</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'first time:'</span>, values)</span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>values <span class="op">=</span> values[____]</span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'second time:'</span>, values)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -652,18 +556,18 @@ second time: [3, 5]</code></pre>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb28">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a>values <span class="op">=</span> []</span>
-<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>values.append(<span class="dv">1</span>)</span>
-<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>values.append(<span class="dv">3</span>)</span>
-<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a>values.append(<span class="dv">5</span>)</span>
-<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'first time:'</span>, values)</span>
-<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a>values <span class="op">=</span> values[<span class="dv">1</span>:<span class="dv">3</span>]</span>
-<span id="cb28-7"><a href="#cb28-7" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'second time:'</span>, values)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>values <span class="op">=</span> []</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>values.append(<span class="dv">1</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>values.append(<span class="dv">3</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>values.append(<span class="dv">5</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'first time:'</span>, values)</span>
+<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a>values <span class="op">=</span> values[<span class="dv">1</span>:<span class="dv">3</span>]</span>
+<span id="cb19-7"><a href="#cb19-7" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'second time:'</span>, values)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -694,7 +598,7 @@ list returned by this slicing operation
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The list’s length would be equal to <code>high - low</code>.</p>
 </div>
@@ -710,11 +614,11 @@ list returned by this slicing operation
 </h3>
 <div class="callout-content">
 <p>Given this:</p>
-<div class="codewrapper sourceCode" id="cb30">
+<div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'string to list:'</span>, <span class="bu">list</span>(<span class="st">'book'</span>))</span>
-<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'list to string:'</span>, <span class="st">''</span>.join([<span class="st">'a'</span>, <span class="st">'r'</span>, <span class="st">'t'</span>, <span class="st">'i'</span>, <span class="st">'c'</span>, <span class="st">'l'</span>, <span class="st">'e'</span>]))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'string to list:'</span>, <span class="bu">list</span>(<span class="st">'book'</span>))</span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'list to string:'</span>, <span class="st">''</span>.join([<span class="st">'a'</span>, <span class="st">'r'</span>, <span class="st">'t'</span>, <span class="st">'i'</span>, <span class="st">'c'</span>, <span class="st">'l'</span>, <span class="st">'e'</span>]))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -734,7 +638,7 @@ first set of single quotes is not empty.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>It creates a list of the <code>some string</code>s characters as
 elements.</li>
@@ -753,12 +657,12 @@ separated by a hyphen character(<code>-</code>).</li>
 </h3>
 <div class="callout-content">
 <p>What does the following program print?</p>
-<div class="codewrapper sourceCode" id="cb32">
+<div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a>resources <span class="op">=</span> [<span class="st">'books'</span>,<span class="st">'periodicals'</span>,<span class="st">'DVDs'</span>,<span class="st">'maps'</span>,</span>
-<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a><span class="st">'databases'</span>,<span class="st">'abstracts'</span>]</span>
-<span id="cb32-3"><a href="#cb32-3" tabindex="-1"></a><span class="bu">print</span>(resource[<span class="op">-</span><span class="dv">1</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>resources <span class="op">=</span> [<span class="st">'books'</span>,<span class="st">'periodicals'</span>,<span class="st">'DVDs'</span>,<span class="st">'maps'</span>,</span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="st">'databases'</span>,<span class="st">'abstracts'</span>]</span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a><span class="bu">print</span>(resource[<span class="op">-</span><span class="dv">1</span>])</span></code></pre>
 </div>
 <ol style="list-style-type: decimal"><li>How does Python interpret a negative index?</li>
 <li>If a list or string has N elements, what is the most negative index
@@ -777,7 +681,7 @@ negative indexing.)</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -804,13 +708,13 @@ index.</li>
 </h3>
 <div class="callout-content">
 <p>What does the following program print?</p>
-<div class="codewrapper sourceCode" id="cb34">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a>resources <span class="op">=</span> [<span class="st">'books'</span>,<span class="st">'periodicals'</span>,<span class="st">'DVDs'</span>,<span class="st">'maps'</span>,</span>
-<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a><span class="st">'databases'</span>,<span class="st">'abstracts'</span>] </span>
-<span id="cb34-3"><a href="#cb34-3" tabindex="-1"></a><span class="bu">print</span>(resources[::<span class="dv">2</span>])</span>
-<span id="cb34-4"><a href="#cb34-4" tabindex="-1"></a><span class="bu">print</span>(resources[::<span class="op">-</span><span class="dv">1</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>resources <span class="op">=</span> [<span class="st">'books'</span>,<span class="st">'periodicals'</span>,<span class="st">'DVDs'</span>,<span class="st">'maps'</span>,</span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="st">'databases'</span>,<span class="st">'abstracts'</span>] </span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a><span class="bu">print</span>(resources[::<span class="dv">2</span>])</span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a><span class="bu">print</span>(resources[::<span class="op">-</span><span class="dv">1</span>])</span></code></pre>
 </div>
 <ol style="list-style-type: decimal"><li>If we write a slice as <code>low:high:stride</code>, what does
 <code>stride</code> do?</li>
@@ -824,7 +728,7 @@ collection?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -850,13 +754,13 @@ element.</li>
 </h3>
 <div class="callout-content">
 <p>What does the following program print?</p>
-<div class="codewrapper sourceCode" id="cb36">
+<div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a>resources <span class="op">=</span> [<span class="st">'books'</span>,<span class="st">'periodicals'</span>,<span class="st">'DVDs'</span>,<span class="st">'maps'</span>,</span>
-<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a><span class="st">'databases'</span>,<span class="st">'abstracts'</span>] </span>
-<span id="cb36-3"><a href="#cb36-3" tabindex="-1"></a><span class="bu">print</span>(resources[<span class="dv">0</span>:<span class="dv">20</span>])</span>
-<span id="cb36-4"><a href="#cb36-4" tabindex="-1"></a><span class="bu">print</span>(resources[<span class="op">-</span><span class="dv">1</span>:<span class="dv">3</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>resources <span class="op">=</span> [<span class="st">'books'</span>,<span class="st">'periodicals'</span>,<span class="st">'DVDs'</span>,<span class="st">'maps'</span>,</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="st">'databases'</span>,<span class="st">'abstracts'</span>] </span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a><span class="bu">print</span>(resources[<span class="dv">0</span>:<span class="dv">20</span>])</span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a><span class="bu">print</span>(resources[<span class="op">-</span><span class="dv">1</span>:<span class="dv">3</span>])</span></code></pre>
 </div>
 </div>
 </div>
@@ -866,7 +770,7 @@ element.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -892,23 +796,23 @@ empty square brackets.</p>
 <p>What do these two programs print? In simple terms, explain the
 difference between <code>sorted(resources)</code> and
 <code>resources.sort()</code>.</p>
-<div class="codewrapper sourceCode" id="cb38">
+<div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="co"># Program A</span></span>
-<span id="cb38-2"><a href="#cb38-2" tabindex="-1"></a>resources <span class="op">=</span>  [<span class="st">'books'</span>,<span class="st">'periodicals'</span>,<span class="st">'DVDs'</span>,<span class="st">'maps'</span>,</span>
-<span id="cb38-3"><a href="#cb38-3" tabindex="-1"></a><span class="st">'databases'</span>,<span class="st">'abstracts'</span>] </span>
-<span id="cb38-4"><a href="#cb38-4" tabindex="-1"></a>result <span class="op">=</span> <span class="bu">sorted</span>(resources)</span>
-<span id="cb38-5"><a href="#cb38-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'resources is'</span>, resources, <span class="st">'and result is'</span>, result)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="co"># Program A</span></span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>resources <span class="op">=</span>  [<span class="st">'books'</span>,<span class="st">'periodicals'</span>,<span class="st">'DVDs'</span>,<span class="st">'maps'</span>,</span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a><span class="st">'databases'</span>,<span class="st">'abstracts'</span>] </span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a>result <span class="op">=</span> <span class="bu">sorted</span>(resources)</span>
+<span id="cb29-5"><a href="#cb29-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'resources is'</span>, resources, <span class="st">'and result is'</span>, result)</span></code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb39">
+<div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="co"># Program B</span></span>
-<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a>resources <span class="op">=</span> [<span class="st">'books'</span>,<span class="st">'periodicals'</span>,<span class="st">'DVDs'</span>,<span class="st">'maps'</span>,</span>
-<span id="cb39-3"><a href="#cb39-3" tabindex="-1"></a><span class="st">'databases'</span>,<span class="st">'abstracts'</span>] </span>
-<span id="cb39-4"><a href="#cb39-4" tabindex="-1"></a>result <span class="op">=</span> resources.sort()</span>
-<span id="cb39-5"><a href="#cb39-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'resources is'</span>, resources, <span class="st">'and result is'</span>, result)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="co"># Program B</span></span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a>resources <span class="op">=</span> [<span class="st">'books'</span>,<span class="st">'periodicals'</span>,<span class="st">'DVDs'</span>,<span class="st">'maps'</span>,</span>
+<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a><span class="st">'databases'</span>,<span class="st">'abstracts'</span>] </span>
+<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a>result <span class="op">=</span> resources.sort()</span>
+<span id="cb30-5"><a href="#cb30-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'resources is'</span>, resources, <span class="st">'and result is'</span>, result)</span></code></pre>
 </div>
 </div>
 </div>
@@ -918,7 +822,7 @@ difference between <code>sorted(resources)</code> and
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7">Show me the solution</h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>Program A:</p>
 <div class="codewrapper">
@@ -937,65 +841,6 @@ letters.</p>
 <p><code>sorted(resources)</code> returns a sorted copy of the list,
 while <code>resources.sort()</code> function call sorts the list <em>in
 place</em> and returns <code>None</code>.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="copying-or-not" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="copying-or-not" class="callout-inner">
-<h3 class="callout-title">Copying (or Not)<a class="anchor" aria-label="anchor" href="#copying-or-not"></a>
-</h3>
-<div class="callout-content">
-<p>What do these two programs print? In simple terms, explain the
-difference between <code>new = old</code> and
-<code>new = old[:]</code>.</p>
-<div class="codewrapper sourceCode" id="cb42">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="co"># Program A</span></span>
-<span id="cb42-2"><a href="#cb42-2" tabindex="-1"></a>old <span class="op">=</span> <span class="bu">list</span>(<span class="st">'book'</span>)</span>
-<span id="cb42-3"><a href="#cb42-3" tabindex="-1"></a>new <span class="op">=</span> old      <span class="co"># simple assignment</span></span>
-<span id="cb42-4"><a href="#cb42-4" tabindex="-1"></a>new[<span class="dv">0</span>] <span class="op">=</span> <span class="st">'D'</span></span>
-<span id="cb42-5"><a href="#cb42-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'new is'</span>, new, <span class="st">'and old is'</span>, old)</span></code></pre>
-</div>
-<div class="codewrapper sourceCode" id="cb43">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" tabindex="-1"></a><span class="co"># Program B</span></span>
-<span id="cb43-2"><a href="#cb43-2" tabindex="-1"></a>old <span class="op">=</span> <span class="bu">list</span>(<span class="st">'book'</span>)</span>
-<span id="cb43-3"><a href="#cb43-3" tabindex="-1"></a>new <span class="op">=</span> old[:]   <span class="co"># assigning a slice</span></span>
-<span id="cb43-4"><a href="#cb43-4" tabindex="-1"></a>new[<span class="dv">0</span>] <span class="op">=</span> <span class="st">'D'</span></span>
-<span id="cb43-5"><a href="#cb43-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'new is'</span>, new, <span class="st">'and old is'</span>, old)</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution8" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
-  <h4 class="accordion-header" id="headingSolution8">Show me the solution</h4>
-</button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
-<div class="accordion-body">
-<p>Program A:</p>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>new is ['D', 'o', 'o', 'k'] and old is ['D', 'o', 'o', 'k']</code></pre>
-</div>
-<p>Program B:</p>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>new is ['D', 'o', 'o', 'k'] and old is ['b', 'o', 'o', 'k']</code></pre>
-</div>
-<p><code>new = old</code> is assigning <code>old</code> to
-<code>new</code>, whereas <code>new = old[:]</code> is a <strong>slice
-assignment</strong>, which will only return a copy of
-<code>old</code>.</p>
 </div>
 </div>
 </div>
@@ -1079,7 +924,7 @@ assignment</strong>, which will only return a copy of
   "url": "https://librarycarpentry.github.io/lc-python-intro/instructor/lists.html",
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/instructor/lists.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2024-03-05",
+  "dateModified": "2024-03-08",
   "datePublished": "2024-03-08"
 }
 

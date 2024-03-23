@@ -330,7 +330,7 @@ function.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Built-in Functions and Help</h1>
-        <p>Last updated on 2024-03-05 |
+        <p>Last updated on 2024-03-23 |
         
         <a href="https://github.com/librarycarpentry/lc-python-intro/edit/main/episodes/functions.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -441,12 +441,16 @@ compared.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">max</span>(<span class="dv">1</span>, <span class="st">'a'</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="bu">max</span>(<span class="dv">1</span>, <span class="st">'a'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>TypeError: unorderable types: str() &gt; int()</code></pre>
+<pre class="error" tabindex="0"><code>TypeError                                 Traceback (most recent call last)
+Cell In[6], line 1
+----&gt; 1 max(1, 'a')
+
+TypeError: '&gt;' not supported between instances of 'str' and 'int'</code></pre>
 </div>
 </section><section id="function-argument-default-values-and-round."><h2 class="section-heading">Function argument default values, and <code>round()</code>.<a class="anchor" aria-label="anchor" href="#function-argument-default-values-and-round."></a>
 </h2>
@@ -510,12 +514,15 @@ round(...)
 </h2>
 <hr class="half-width"><p>Every function call produces some result and if the function doesn’t
 have a useful result to return, it usually returns the special value
-<code>None</code>.</p>
+<code>None</code>. Each line of Python code is executed in order. In
+this case, the second line call to <a href="https://github.com/soumyaray/result" class="external-link">result</a> returns ‘None’
+since the <code>print</code> statement in the previous line didn’t
+return a value to the <code>result</code> variable.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>result <span class="op">=</span> <span class="bu">print</span>(<span class="st">'example'</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'result of print is'</span>, result)</span></code></pre>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'result of print is </span><span class="sc">{</span>result<span class="sc">}</span><span class="ss">'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -685,8 +692,8 @@ function.</li>
   "url": "https://librarycarpentry.github.io/lc-python-intro/functions.html",
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/functions.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2024-03-05",
-  "datePublished": "2024-03-20"
+  "dateModified": "2024-03-23",
+  "datePublished": "2024-03-23"
 }
 
   </script><script>

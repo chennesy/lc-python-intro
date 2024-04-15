@@ -327,7 +327,7 @@ function.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Built-in Functions and Help</h1>
-        <p>Last updated on 2024-03-23 |
+        <p>Last updated on 2024-04-15 |
         
         <a href="https://github.com/librarycarpentry/lc-python-intro/edit/main/episodes/functions.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -413,23 +413,24 @@ values.</li>
 <li>Use <code>min()</code> to find the smallest.</li>
 </ul><p>Both <code>max()</code> and <code>min()</code> work on character
 strings as well as numbers, so can be used for numerical and
-alphabetical comparisons. Note that alphabetical comparisons follow some
-specific rules about what is larger or smaller: - <code>'a'</code> is
-smaller than <code>'b'</code> - <code>'A'</code> is smaller than
-<code>'a'</code></p>
+alphabetical comparisons. Note that numerical and alphabetical
+comparisons follow some specific rules about what is larger or smaller:
+numbers are smaller than letters and upper case letters are smaller than
+lower case letters, so the order of operations in Python is 0-9, A-Z,
+a-z when comparing numbers and letters.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">max</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)) <span class="co"># notice that functions are nestable</span></span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">min</span>(<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="bu">max</span>(<span class="st">'c'</span>, <span class="st">'d'</span>))) <span class="co"># nest with care since code gets less readable</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">min</span>(<span class="st">'a'</span>, <span class="st">'A'</span>))</span></code></pre>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">min</span>(<span class="st">'a'</span>, <span class="st">'A'</span>, <span class="st">'2'</span>)) <span class="co"># numbers and letters can be compared if they are the same data type</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code><span><span class="fl">3</span></span>
 <span><span class="va">a</span></span>
-<span><span class="va">A</span></span></code></pre>
+<span><span class="fl">2</span></span></code></pre>
 </div>
 </section><section id="functions-may-only-work-for-certain-combinations-of-arguments."><h2 class="section-heading">Functions may only work for certain (combinations of)
 arguments.<a class="anchor" aria-label="anchor" href="#functions-may-only-work-for-certain-combinations-of-arguments."></a>
@@ -558,7 +559,7 @@ sense?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -595,7 +596,7 @@ TypeError: '&gt;' not supported between instances of 'str' and 'int'</code></pre
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Both functions require an argument to execute</p>
 <div class="codewrapper sourceCode" id="cb19">
@@ -691,7 +692,7 @@ function.</li>
   "url": "https://librarycarpentry.github.io/lc-python-intro/instructor/functions.html",
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/instructor/functions.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2024-03-23",
+  "dateModified": "2024-04-15",
   "datePublished": "2024-04-15"
 }
 

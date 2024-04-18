@@ -407,13 +407,11 @@ machine learning tools for predictive data analysis.</li>
 such as mathematical functions and random number generators.</li>
 </ul></section><section id="you-must-import-a-library-or-module-before-using-it."><h2 class="section-heading">You must import a library or module before using it.<a class="anchor" aria-label="anchor" href="#you-must-import-a-library-or-module-before-using-it."></a>
 </h2>
-<hr class="half-width"><p>You can use <code>import</code> to load a library or module into a
-program’s memory. Then you can refer to things from the library with the
-syntax <code>library_name.thing_name</code>. When we get to pandas we
-will import a library, but right now let’s import and use the
-<code>string</code> module from Python’s standard library to generate a
-list of lowercase ASCII letters and to change the case of a text
-string:</p>
+<hr class="half-width"><p>Use <code>import</code> to load a library into a program’s memory.
+Then you can refer to things from the library as
+<code>library_name.function</code>. Let’s import and use the
+<code>string</code> library to generate a list of lowercase ASCII
+letters and to change the case of a text string:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -438,7 +436,7 @@ Capitalise This Sentence Please.</code></pre>
 <div class="callout-content">
 <p>We introduced Python dot notation when we looked at methods like
 <code>list_name.append()</code>. We can use the same syntax when we call
-fucntions of a specific Python library, such as
+functions of a specific Python library, such as
 <code>string.capwords()</code>. In fact, this dot notation is common in
 Python, and can refer to relationships between different types of Python
 objects. Remember that it is always the case that the object to the

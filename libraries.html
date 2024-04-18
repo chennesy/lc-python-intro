@@ -200,9 +200,9 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#python-libraries-are-powerful-collections-of-tools.">Python libraries are powerful collections of tools.</a></li>
-<li><a href="#you-must-import-a-library-before-using-it.">You must import a library before using it.</a></li>
+<li><a href="#you-must-import-a-library-or-module-before-using-it.">You must import a library or module before using it.</a></li>
 <li><a href="#use-help-to-learn-about-the-contents-of-a-library-module.">Use <code>help</code> to learn about the contents of a library
-“module.”</a></li>
+module.</a></li>
 <li><a href="#import-specific-items">Import specific items</a></li>
 <li><a href="#use-library-aliases">Use library aliases</a></li>
 <li><a href="#pandas">Pandas</a></li>
@@ -330,7 +330,7 @@ about data.</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Libraries &amp; Pandas</h1>
-        <p>Last updated on 2024-04-17 |
+        <p>Last updated on 2024-04-18 |
         
         <a href="https://github.com/librarycarpentry/lc-python-intro/edit/main/episodes/libraries.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -405,13 +405,15 @@ machine learning tools for predictive data analysis.</li>
 <li>
 <a href="https://numpy.org/" class="external-link">NumPy</a> - numerical computing tools
 such as mathematical functions and random number generators.</li>
-</ul></section><section id="you-must-import-a-library-before-using-it."><h2 class="section-heading">You must import a library before using it.<a class="anchor" aria-label="anchor" href="#you-must-import-a-library-before-using-it."></a>
+</ul></section><section id="you-must-import-a-library-or-module-before-using-it."><h2 class="section-heading">You must import a library or module before using it.<a class="anchor" aria-label="anchor" href="#you-must-import-a-library-or-module-before-using-it."></a>
 </h2>
-<hr class="half-width"><p>Use <code>import</code> to load a library into a program’s memory.
-Then you can refer to things from the library as
-<code>library_name.thing_name</code>. Let’s import and use the
-<code>string</code> library to generate a list of lowercase ASCII
-letters and to change the case of a text string:</p>
+<hr class="half-width"><p>You can use <code>import</code> to load a library or module into a
+program’s memory. Then you can refer to things from the library with the
+syntax <code>library_name.thing_name</code>. When we get to pandas we
+will import a library, but right now let’s import and use the
+<code>string</code> module from Python’s standard library to generate a
+list of lowercase ASCII letters and to change the case of a text
+string:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -447,12 +449,11 @@ say, <code>Brazil.São_Paulo()</code> or <code>Japan.Tokyo()</code>.</p>
 </div>
 </div>
 </section><section id="use-help-to-learn-about-the-contents-of-a-library-module."><h2 class="section-heading">Use <code>help</code> to learn about the contents of a library
-“module.”<a class="anchor" aria-label="anchor" href="#use-help-to-learn-about-the-contents-of-a-library-module."></a>
+module.<a class="anchor" aria-label="anchor" href="#use-help-to-learn-about-the-contents-of-a-library-module."></a>
 </h2>
-<hr class="half-width"><p>The <code>help()</code> function can tell us more about a library,
-including more information about its functions and/or variables. Note
-that in the help documentation below the library is referred to as a
-“module.” These terms are often used interchangeably.</p>
+<hr class="half-width"><p>The <code>help()</code> function can tell us more about a module in a
+library, including more information about its functions and/or
+variables.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -525,7 +526,7 @@ download and install it on your machine. Anaconda comes with many of the
 most popular Python libraries for scientific computing applications
 built-in, so if you installed Anaconda for this workshop, you’ll be able
 to import many common libraries directly. Some less common tools, like
-the PyMarc package, however, would need to be installed first.</p>
+the PyMarc library, however, would need to be installed first.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -536,7 +537,7 @@ the PyMarc package, however, would need to be installed first.</p>
 </h3>
 <pre class="error" tabindex="0"><code>ModuleNotFoundError: No module named 'pymarc'</code></pre>
 </div>
-<p>You can find out how to install the package by looking at the
+<p>You can find out how to install the library by looking at the
 documentation. <a href="https://pypi.org/project/pymarc/" class="external-link">PyMarc</a>,
 for example, recommends using a command line tool, <code>pip</code>, to
 install it. You can install with pip in a Jupyter notebook by starting
@@ -753,7 +754,7 @@ course of the year.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -810,7 +811,7 @@ library</a> module could help you?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The <a href="https://docs.python.org/3/library/datetime.html" class="external-link">datetime
 module</a> seems like it could help you.</p>
@@ -842,7 +843,7 @@ convert your date:</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Is there something special about that date in library history?</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>According to <a href="https://www.wccls.org/news/brief-history-library-catalog" class="external-link">Washington
 County Cooperative Library Services</a>: “1971, August 26 – Ohio
@@ -933,8 +934,8 @@ programs.</li>
   "url": "https://librarycarpentry.github.io/lc-python-intro/libraries.html",
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/libraries.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2024-04-17",
-  "datePublished": "2024-04-17"
+  "dateModified": "2024-04-18",
+  "datePublished": "2024-04-18"
 }
 
   </script><script>

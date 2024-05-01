@@ -92,11 +92,11 @@
   Python Intro for Libraries
 </div>
 
-<aside class="col-md-12 lesson-progress"><div style="width: 46%" class="percentage">
-    46%
+<aside class="col-md-12 lesson-progress"><div style="width: 43%" class="percentage">
+    43%
   </div>
   <div class="progress library">
-    <div class="progress-bar library" role="progressbar" style="width: 46%" aria-valuenow="46" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar library" role="progressbar" style="width: 43%" aria-valuenow="43" aria-label="Lesson Progress" aria-valuemin="0" aria-valuemax="100">
     </div>
   </div>
 </aside><div class="container">
@@ -210,6 +210,7 @@
       <div class="accordion-body">
         <ul><li><a href="#for-loops">For loops</a></li>
 <li><a href="#loop-variables">Loop variables</a></li>
+<li><a href="#you-can-loop-through-other-python-objects">You can loop through other Python objects</a></li>
 <li><a href="#use-range-to-iterate-over-a-sequence-of-numbers.">Use <code>range</code> to iterate over a sequence of numbers.</a></li>
 <li><a href="#accumulators">Accumulators</a></li>
         </ul></div><!--/div.accordion-body-->
@@ -321,7 +322,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>For Loops</h1>
-        <p>Last updated on 2024-04-18 |
+        <p>Last updated on 2024-05-01 |
         
         <a href="https://github.com/librarycarpentry/lc-python-intro/edit/main/episodes/for-loops.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -349,11 +350,11 @@ values?</li>
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Explain what “for loops”” are normally used for.</li>
+<ul><li>Explain what <code>for</code> loops are normally used for.</li>
 <li>Trace the execution of an un-nested loop and correctly state the
 values of variables in each iteration.</li>
-<li>Write for loops that use the accumulator pattern to aggregate
-values.</li>
+<li>Write <code>for</code> loops that use the accumulator pattern to
+aggregate values.</li>
 </ul></div>
 </div>
 </div>
@@ -426,14 +427,29 @@ IndexError: list index out of range</code></pre>
 <span><span class="fl">5</span></span>
 <span><span class="fl">7</span></span></code></pre>
 </div>
-<p>This code is shorter, and more robust as well. Even if the values of
-the <code>odds</code> list changes, the loop will still work.</p>
+<p>A <code>for</code> loop repeats an operation – in this case, printing
+– once for each element it encounters in a collection. The general
+structure of a loop is:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>odds <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>]</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> odds:</span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>    <span class="bu">print</span>(num)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="cf">for</span> variable <span class="kw">in</span> collection:</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>    <span class="co"># do things using variable, such as print</span></span></code></pre>
+</div>
+<p>We can call the loop variable anything we like, there must be a colon
+at the end of the line starting the loop, and we must indent anything we
+want to run inside the loop. Unlike many other programming languages,
+there is no command to signify the end of the loop body; everything
+indented after the <code>for</code> statement belongs to the loop.</p>
+<p>Loops are more robust ways to deal with containers like lists. Even
+if the values of the <code>odds</code> list changes, the loop will still
+work.</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>odds <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">11</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> odds:</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>    <span class="bu">print</span>(num)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -445,46 +461,48 @@ the <code>odds</code> list changes, the loop will still work.</p>
 <span><span class="fl">9</span></span>
 <span><span class="fl">11</span></span></code></pre>
 </div>
-<p>A <code>for</code> loop repeats an operation – in this case, printing
-– once for each element it encounters in a collection. The general
-structure of a loop is:</p>
-<div class="codewrapper sourceCode" id="cb10">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="cf">for</span> variable <span class="kw">in</span> collection:</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>    <span class="co"># do things using variable, such as print</span></span></code></pre>
-</div>
-<p>We can call the loop variable anything we like, there must be a colon
-at the end of the line starting the loop, and we must indent anything we
-want to run inside the loop. Unlike many other programming languages,
-there is no command to signify the end of the loop body; everything
-indented after the <code>for</code> statement belongs to the loop.</p>
+<p>Using a shorter version of the odds example above, the loop might
+look like this:</p>
+<figure><img src="fig/for_loop.png" alt="Loop variable 'num' being assigned the value of each element in the list odds in turn and then being printed" class="figure mx-auto d-block"></figure><p>Each number (<code>num</code>) variable in the <code>odds</code> list
+is looped through and printed one number after another.</p>
 </section><section id="loop-variables"><h2 class="section-heading">Loop variables<a class="anchor" aria-label="anchor" href="#loop-variables"></a>
 </h2>
 <hr class="half-width"><p>Loop variables are created on demand when you define the loop and
-they will persist after the loop finishes. In other words, in the
-loop:</p>
+they will persist after the loop finishes. Like all variable names, it’s
+helpful to give <code>for</code> loop variables meaningful names that
+you’ll understand as the code in your loop grows.
+<code>for num in odds</code> is easier to understand than
+<code>for kitten in odds</code>, for example.</p>
+</section><section id="you-can-loop-through-other-python-objects"><h2 class="section-heading">You can loop through other Python objects<a class="anchor" aria-label="anchor" href="#you-can-loop-through-other-python-objects"></a>
+</h2>
+<hr class="half-width"><p>You can use a <code>for</code> loop to iterate through each element
+in a string. <code>for</code> loops are not limited to operating on
+lists.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>odds <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>]</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> odds:</span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>    <span class="bu">print</span>(num)</span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="bu">print</span>(num)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="cf">for</span> letter <span class="kw">in</span> <span class="st">'library of babel'</span>:</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>  <span class="bu">print</span>(letter)</span></code></pre>
 </div>
-<p>We are creating a new variable called <code>num</code> that will
-correspond to each element in the <code>odds</code> list as it passes
-through the loop. At the end of the loop, <code>num</code> is still
-equal to the last element in the list it was assigned to.</p>
-<p>Like all variable names, it’s helpful to give <code>for</code> loop
-variables meaningful names that you’ll understand as the code in your
-loop grows. For example, <code>even</code> is probably a better variable
-to use than <code>kitten</code> here:</p>
-<div class="codewrapper sourceCode" id="cb12">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="cf">for</span> kitten <span class="kw">in</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>]:</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>    <span class="bu">print</span>(kitten)</span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="va">L</span></span>
+<span><span class="va">i</span></span>
+<span><span class="va">b</span></span>
+<span><span class="va">r</span></span>
+<span><span class="va">a</span></span>
+<span><span class="va">r</span></span>
+<span><span class="va">y</span></span>
+<span> </span>
+<span><span class="va">o</span></span>
+<span><span class="va">f</span></span>
+<span> </span>
+<span><span class="va">B</span></span>
+<span><span class="va">a</span></span>
+<span><span class="va">b</span></span>
+<span><span class="va">e</span></span>
+<span><span class="va">l</span></span></code></pre>
 </div>
 </section><section id="use-range-to-iterate-over-a-sequence-of-numbers."><h2 class="section-heading">Use <code>range</code> to iterate over a sequence of numbers.<a class="anchor" aria-label="anchor" href="#use-range-to-iterate-over-a-sequence-of-numbers."></a>
 </h2>
@@ -513,53 +531,66 @@ index values (“up to, but not including”).</p>
 variable to zero, an empty string, or an empty list before the loop
 begins. Then the loop updates the accumulator variable with values from
 a collection.</p>
+<p>We can use the <code>+=</code> operator to add a value to
+<code>total</code> in the loop below, so that each time we iterate
+through the loop we’ll add the index value of the <code>range()</code>
+to <code>total</code>.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="co"># Sum the first 10 integers.</span></span>
 <span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
-<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'number is: </span><span class="sc">{</span>number<span class="sc">}</span><span class="ss"> total is: </span><span class="sc">{</span>total<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>    total <span class="op">=</span> total <span class="op">+</span> number</span>
-<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'At the end of the loop, number is </span><span class="sc">{</span>number<span class="sc">}</span><span class="ss"> and total is </span><span class="sc">{</span>total<span class="sc">}</span><span class="ss">'</span>)</span></code></pre>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="co"># range(1,11) will give us the numbers 1 through 10</span></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'num is: </span><span class="sc">{</span>num<span class="sc">}</span><span class="ss"> total is: </span><span class="sc">{</span>total<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>    total <span class="op">+=</span> num</span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Loop finished. num is: </span><span class="sc">{</span>num<span class="sc">}</span><span class="ss"> total is: </span><span class="sc">{</span>total<span class="sc">}</span><span class="ss">'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>number is: 1 total is: 0
-number is: 2 total is: 1
-number is: 3 total is: 3
-number is: 4 total is: 6
-number is: 5 total is: 10
-number is: 6 total is: 15
-number is: 7 total is: 21
-number is: 8 total is: 28
-number is: 9 total is: 36
-number is: 10 total is: 45
-At the end of the loop number is 10 and total is 55</code></pre>
+<pre class="output" tabindex="0"><code>num is: 1 total is: 0
+num is: 2 total is: 1
+num is: 3 total is: 3
+num is: 4 total is: 6
+num is: 5 total is: 10
+num is: 6 total is: 15
+num is: 7 total is: 21
+num is: 8 total is: 28
+num is: 9 total is: 36
+num is: 10 total is: 45
+Loop finished. Num is: 10 total is: 55</code></pre>
 </div>
-<div id="reversing-a-string" class="callout challenge">
+<ul><li>The first time through the loop, <code>total</code> is equal to 0,
+and <code>num</code> is 1 (the range starts at 1). After those values
+print out we add 1 to the value of <code>total</code> (0), to get
+1.</li>
+<li>The second time through the loop, <code>total</code> is equal to 1,
+and <code>num</code> is 2. After those print out we add 2 to the value
+of <code>total</code> (1), to get 3.</li>
+<li>The third time through the loop, <code>total</code> is equal to 3,
+and <code>num</code> is 3. After those print out we add 3 to the value
+of <code>total</code> (3), to bring us to 6.</li>
+<li>And so on.</li>
+<li>After the loop is finished the values of <code>total</code> and
+<code>num</code> retain the values that were assigned the last time
+through the loop. So <code>num</code> is equal to 10 (the last index
+value of <code>range()</code>) and <code>total</code> is equal to 55 (45
++ 10).</li>
+</ul><div id="loop-through-a-list" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="reversing-a-string" class="callout-inner">
-<h3 class="callout-title">Reversing a String<a class="anchor" aria-label="anchor" href="#reversing-a-string"></a>
+<div id="loop-through-a-list" class="callout-inner">
+<h3 class="callout-title">Loop through a list<a class="anchor" aria-label="anchor" href="#loop-through-a-list"></a>
 </h3>
 <div class="callout-content">
-<p>Fill in the blanks in the program below so that it prints “nit” (the
-reverse of the original character string “tin”).</p>
-<p>Tip: you can concatenate two strings together using the
-<code>+</code> operator. For example, <code>'librar' + 'ian'</code> will
-create one string, <code>'librarian'</code>.</p>
-<div class="codewrapper sourceCode" id="cb17">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>original <span class="op">=</span> <span class="st">"tin"</span></span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>result <span class="op">=</span> ____</span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="cf">for</span> char <span class="kw">in</span> original:</span>
-<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>    result <span class="op">=</span> ____ _ _____</span>
-<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre>
-</div>
+<p>Create a list of three vegetables, and then build a <code>for</code>
+loop to print out each vegetable from the list.</p>
+<p>Bonus: Create an accumulator variable to print out the index value of
+each item in the list along with the vegetable name.</p>
 </div>
 </div>
 </div>
@@ -568,129 +599,40 @@ create one string, <code>'librarian'</code>.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<p><code>result</code> is an empty string because we use it to build or
-accumulate on our reverse string. <code>char</code> is the loop variable
-for <code>original</code>. Each time through the loop <code>char</code>
-takes on one value from <code>original</code>. Use <code>char</code>
-with <code>result</code> to control the order of the string. Our loop
-code should look like this:</p>
-<pre><code>original = "tin"
-result = ""
-for char in original:
-   result = char + result
-print(result)</code></pre>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code><span><span class="va">nit</span></span></code></pre>
-</div>
-<p>If you were to expand out the loop the iterations would look
-something like this:</p>
-<div class="codewrapper sourceCode" id="cb20">
+<div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co">#First loop</span></span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>char <span class="op">=</span> <span class="st">"t"</span></span>
-<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>result <span class="op">=</span> <span class="st">""</span></span>
-<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>char <span class="op">+</span> result <span class="op">=</span> <span class="st">"t"</span></span>
-<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a><span class="co">#Second loop</span></span>
-<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a>char <span class="op">=</span> <span class="st">'i"</span></span>
-<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a><span class="er">result = "t"</span></span>
-<span id="cb20-8"><a href="#cb20-8" tabindex="-1"></a>char <span class="op">+</span> result <span class="op">=</span> <span class="st">"it"</span></span>
-<span id="cb20-9"><a href="#cb20-9" tabindex="-1"></a><span class="co">#Third loop</span></span>
-<span id="cb20-10"><a href="#cb20-10" tabindex="-1"></a>char <span class="op">=</span> <span class="st">"n"</span></span>
-<span id="cb20-11"><a href="#cb20-11" tabindex="-1"></a>result <span class="op">=</span> <span class="st">"it"</span></span>
-<span id="cb20-12"><a href="#cb20-12" tabindex="-1"></a>char <span class="op">+</span> result <span class="op">=</span> <span class="st">"nit"</span></span></code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="practice-accumulating" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="practice-accumulating" class="callout-inner">
-<h3 class="callout-title">Practice Accumulating<a class="anchor" aria-label="anchor" href="#practice-accumulating"></a>
-</h3>
-<div class="callout-content">
-<p>Fill in the blanks to sum the lengths of each string in the list,
-<code>["book", "magazine", "dvd"]</code></p>
-<div class="codewrapper sourceCode" id="cb21">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="co"># Total length of the strings in the list: ["book", "magazine", "dvd"] </span></span>
-<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> [<span class="st">"book"</span>, <span class="st">"magazine"</span>, <span class="st">"dvd"</span>] :</span>
-<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a>    ____ <span class="op">=</span> total <span class="op">+</span> ___(word)</span>
-<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a><span class="bu">print</span>(total)</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
-<div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb22">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> [<span class="st">"book"</span>, <span class="st">"magazine"</span>, <span class="st">"dvd"</span>] :</span>
-<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>    total <span class="op">=</span> total <span class="op">+</span> <span class="bu">len</span>(word)</span>
-<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a><span class="bu">print</span>(total)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>vegetables <span class="op">=</span> [<span class="st">'lettuce'</span>, <span class="st">'carrots'</span>, <span class="st">'celery'</span>]</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="cf">for</span> veg <span class="kw">in</span> vegetables:</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>    <span class="bu">print</span>(veg)</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>    </span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span><span class="fl">15</span></span></code></pre>
+<pre class="output" tabindex="0"><code><span><span class="va">lettuce</span></span>
+<span><span class="va">carrots</span></span>
+<span><span class="va">celery</span></span></code></pre>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div id="use-slices-in-a-loop" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="use-slices-in-a-loop" class="callout-inner">
-<h3 class="callout-title">Use slices in a loop<a class="anchor" aria-label="anchor" href="#use-slices-in-a-loop"></a>
-</h3>
-<div class="callout-content">
-<p>How would you loop through a list,
-<code>["red", "green", "blue"]</code> to create (and print out) the
-acronym <code>RGB</code>, pulling from the first letters in each
-string?</p>
-<p>Tip: You can apply the .capitalize() function to capitalize the first
-letter of a string. For example, <code>'university'.capitalize()</code>
-will yield <code>'University'</code>.</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
-</button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
-<div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb24">
+<p>Bonus:</p>
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>acronym <span class="op">=</span> <span class="st">''</span></span>
-<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="cf">for</span> color <span class="kw">in</span> [<span class="st">'red'</span>, <span class="st">'green'</span>, <span class="st">'blue'</span>]:</span>
-<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a>    acronym <span class="op">=</span> acronym <span class="op">+</span> color[<span class="dv">0</span>].capitalize()</span>
-<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a><span class="bu">print</span>(acronym)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>idx <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>vegetables <span class="op">=</span> [<span class="st">'lettuce'</span>, <span class="st">'carrots'</span>, <span class="st">'celery'</span>]</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="cf">for</span> veg <span class="kw">in</span> vegetables:</span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a>    <span class="bu">print</span>(idx, veg)</span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a>    idx <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb19-6"><a href="#cb19-6" tabindex="-1"></a>    </span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code><span><span class="va">RGB</span></span></code></pre>
+<pre class="output" tabindex="0"><code>0 lettuce
+1 carrots
+2 celery</code></pre>
 </div>
 </div>
 </div>
@@ -704,14 +646,104 @@ will yield <code>'University'</code>.</p>
 <h3 class="callout-title">Use range() in a loop<a class="anchor" aria-label="anchor" href="#use-range-in-a-loop"></a>
 </h3>
 <div class="callout-content">
-<p>How would you create a list including the numbers 1, 2, 3, 4, 5, 6,
-7, 8, 9, and 10, using range() in a <code>for</code> loop?</p>
-<p>Tips:</p>
-<ul><li>You can create a blank list before the <code>for</code> loop by
-assigning a variable to <code>[]</code>. For example,
-<code>container_list = []</code>.</li>
-<li>You can use the .append() method to add items to a list.</li>
-</ul></div>
+<p>Print out the numbers 10, 11, 12, 13, 14, 15, using range() in a
+<code>for</code> loop.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb21">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a></span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">16</span>):</span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a>    <span class="bu">print</span>(num)</span>
+<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a>    </span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="fl">10</span></span>
+<span><span class="fl">11</span></span>
+<span><span class="fl">12</span></span>
+<span><span class="fl">13</span></span>
+<span><span class="fl">14</span></span>
+<span><span class="fl">15</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="use-a-string-index-in-a-loop" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="use-a-string-index-in-a-loop" class="callout-inner">
+<h3 class="callout-title">Use a string index in a loop<a class="anchor" aria-label="anchor" href="#use-a-string-index-in-a-loop"></a>
+</h3>
+<div class="callout-content">
+<p>How would you loop through a list with the values ‘red’, ‘green’, and
+‘blue’ to create the acronym <code>rgb</code>, pulling from the first
+letters in each string? Print the acronym when the loop is finished.</p>
+<p>Hint: Use the <code>+</code> operator to concatenate strings
+together. For example, <code>lib = 'lib' + 'rary'</code> will assign the
+value of ‘library’ to <code>lib</code>.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb23">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>acronym <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="cf">for</span> color <span class="kw">in</span> [<span class="st">'red'</span>, <span class="st">'green'</span>, <span class="st">'blue'</span>]:</span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>    acronym <span class="op">=</span> acronym <span class="op">+</span> color[<span class="dv">0</span>]</span>
+<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a><span class="bu">print</span>(acronym)</span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="va">rgb</span></span></code></pre>
+</div>
+<p>You could also concatenate inside of the loop with
+<code>acronym += color[0]</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="subtract-a-list-of-values-in-a-loop" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="subtract-a-list-of-values-in-a-loop" class="callout-inner">
+<h3 class="callout-title">Subtract a list of values in a loop<a class="anchor" aria-label="anchor" href="#subtract-a-list-of-values-in-a-loop"></a>
+</h3>
+<div class="callout-content">
+<ol style="list-style-type: decimal"><li>Create an accumulator variable called <code>total</code> that starts
+at 100.</li>
+<li>Create a list called <code>numbers</code> with the values of 10, 15,
+20, 25, 30.</li>
+<li>Create a <code>for</code> loop to iterate through each item in the
+list.</li>
+<li>Each time through the list update the value of <code>total</code> to
+subtract the value of the current list item from <code>total</code>.
+Tip: <code>-=</code> works for subtraction in the same way that
+<code>+=</code> works for addition.</li>
+<li>Print the value of <code>total</code> inside of the loop to keep
+track of its value throughout.</li>
+</ol></div>
 </div>
 </div>
 <div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
@@ -719,21 +751,25 @@ assigning a variable to <code>[]</code>. For example,
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb26">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>container <span class="op">=</span> []</span>
-<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
-<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>    container.append(num)</span>
-<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a><span class="bu">print</span>(container)</span>
-<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a>    </span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>]</span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a><span class="cf">for</span> num <span class="kw">in</span> numbers:</span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>    total <span class="op">-=</span> num</span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a>    <span class="bu">print</span>(total)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code></pre>
+<pre class="output" tabindex="0"><code><span><span class="fl">90</span></span>
+<span><span class="fl">75</span></span>
+<span><span class="fl">55</span></span>
+<span><span class="fl">30</span></span>
+<span><span class="fl">0</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -820,8 +856,8 @@ have a meaningful name to the looping variable).</li>
   "url": "https://librarycarpentry.github.io/lc-python-intro/for-loops.html",
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/for-loops.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2024-04-18",
-  "datePublished": "2024-04-30"
+  "dateModified": "2024-05-01",
+  "datePublished": "2024-05-01"
 }
 
   </script><script>

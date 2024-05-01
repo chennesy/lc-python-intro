@@ -320,13 +320,13 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Getting Started</h1>
-        <p>Last updated on 2024-04-11 |
+        <p>Last updated on 2024-05-01 |
         
         <a href="https://github.com/librarycarpentry/lc-python-intro/edit/main/episodes/getting-started.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
         
         
-        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
+        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
         
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -366,47 +366,61 @@ file).</li>
 </h2>
 <hr class="half-width"><p>Python is a popular programming language for tasks such as data
 collection, cleaning, and analysis. Python can help you to create
-reproducible workflows to accomplish repetitive tasks more efficiently.
-Let’s consider a few examples of folks using Python in different library
-settings:</p>
-<ol style="list-style-type: decimal"><li><p><strong>Metadata work.</strong> Many cataloging teams use Python
-to migrate, transform and enrich metadata that they receive from
-different sources. For example, the <a href="https://pypi.org/project/pymarc/" class="external-link">pymarc library</a> is a popular
-Python package for working with MARC21 records.</p></li>
-<li><p><strong>Collection and citation analysis.</strong> Python can
+reproducible workflows to accomplish repetitive tasks more
+efficiently.</p>
+<p>This lesson works with a series of CSV files of circulation data from
+the Chicago Public Library system to demonstrate how to use Python to
+clean, analyze, and visualize usage data that spans over the course of
+multiple years.</p>
+<div id="python-in-libraries" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="python-in-libraries" class="callout-inner">
+<h3 class="callout-title">Python in Libraries<a class="anchor" aria-label="anchor" href="#python-in-libraries"></a>
+</h3>
+<div class="callout-content">
+<p>There are a lot of ways that library and information science folks
+use Python in their work. Go around the room and have helpers and
+co-teachers share how they have used Python.</p>
+<p>Learners: Can you think of other ways to use Python in libraries? Do
+you have hopes for how you’d like to use Python in the future?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<p>Here a few areas where you might apply Python in your work.</p>
+<p><strong>Metadata work.</strong> Many cataloging teams use Python to
+migrate, transform and enrich metadata that they receive from different
+sources. For example, the <a href="https://pypi.org/project/pymarc/" class="external-link">pymarc library</a> is a popular
+Python package for working with MARC21 records.</p>
+<p><strong>Collection and citation analysis.</strong> Python can
 automate workflows to analyze library collections. In cases where
 spreadsheets and OpenRefine are unable to support specific forms of
-analysis, Python is a more flexible and powerful tool.</p></li>
-<li><p><strong>Assessment.</strong> Library workers often need to
-collect metrics or statistics on some aspect of their work. Python can
-be a valuable tool to collect, clean, analyze, and visualize that data
-in a consistent way over time.</p></li>
-<li><p><strong>Accessing data.</strong> Researchers often use Python to
+analysis, Python is a more flexible and powerful tool.</p>
+<p><strong>Assessment.</strong> Library workers often need to collect
+metrics or statistics on some aspect of their work. Python can be a
+valuable tool to collect, clean, analyze, and visualize that data in a
+consistent way over time.</p>
+<p><strong>Accessing data.</strong> Researchers often use Python to
 collect data (including textual data) from websites and social media
 platforms. Academic librarians are often well-positioned to help teach
 these researchers how to use Python for web scraping or querying
 Application Programming Interfaces (APIs) to access the data they
-need.</p></li>
-<li><p><strong>Analyzing data.</strong> Python is widely used by
-scholars who are embarking on different forms of computational research
-(e.g., network analysis, natural language processing, machine learning).
+need.</p>
+<p><strong>Analyzing data.</strong> Python is widely used by scholars
+who are embarking on different forms of computational research (e.g.,
+network analysis, natural language processing, machine learning).
 Library workers can leverage Python for their own research in these
 areas, but also take part in larger networks of academic support related
 to data science, computational social sciences, and/or digital
-humanities.</p></li>
-</ol><div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
-  <h3 class="accordion-header" id="headingInstructor1">
-<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>Instructor Note</h3>
-</button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
-<div class="accordion-body">
-<p>Instructors: Along with the examples above, it can be helpful to ask
-your co-instructors and helpers to share real-world examples of how they
-integrate Python into their own work and why they find it useful. You
-can also ask learners if they have any particular Python projects in
-mind.</p>
+humanities.</p>
 </div>
 </div>
 </div>
@@ -601,26 +615,40 @@ to do otherwise.</p>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="dv">3</span></span></code></pre>
 </div>
-<div id="editing-the-notebook" class="callout">
+</div>
+<div class="section level3">
+<h3 id="editing-the-notebook">Editing the notebook<a class="anchor" aria-label="anchor" href="#editing-the-notebook"></a></h3>
+<p>You can use the icons at the top of your notebook to edit the cells
+in your Notebook:</p>
+<ul><li>The <code>+</code> icon adds a new cell below the selected
+cell.</li>
+<li>The scissors icon will delete the current cell.</li>
+</ul><p>You can move cells around in your notebook by hovering over the
+left-hand margin of a cell until your cursor changes into a four-pointed
+arrow, and then dragging and dropping the cell where you want it.</p>
+<div id="markdown" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="editing-the-notebook" class="callout-inner">
-<h3 class="callout-title">Editing the notebook<a class="anchor" aria-label="anchor" href="#editing-the-notebook"></a>
+<div id="markdown" class="callout-inner">
+<h3 class="callout-title">Markdown<a class="anchor" aria-label="anchor" href="#markdown"></a>
 </h3>
 <div class="callout-content">
-<p>You can use the icons at the top of your notebook to edit the cells
-in your Notebook: - The <code>+</code> icon adds a new cell below the
-selected cell. The scissors icon will delete the current cell.</p>
-<p>You can move cells around in your notebook by hovering over the
-left-hand margin of a cell until your cursor changes into a four-pointed
-arrow, and then dragging and dropping the cell where you want it.</p>
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">
+<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>Instructor Note</h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div class="accordion-body">
+<p>Instructors: Since the lesson is focused on Python we don’t include
+any Markdown examples here. If you want to teach Markdown, note that it
+will slow down the lesson.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="section level3">
-<h3 id="markdown">Markdown<a class="anchor" aria-label="anchor" href="#markdown"></a></h3>
 <p>You can add text to a Juypter notebook by selecting a cell, and
 changing the dropdown above the notebook from <code>Code</code> to
 <code>Markdown</code>. Markdown is a lightweight language for formatting
@@ -630,7 +658,17 @@ Markdown in this lesson, there are many helpful online guides out there:
 - <a href="https://www.ibm.com/docs/en/watson-studio-local/1.2.3?topic=notebooks-markdown-jupyter-cheatsheet" class="external-link">Markdown
 for Jupyter Cheatsheet (IBM)</a> - <a href="https://www.markdownguide.org/" class="external-link">Markdown Guide (Matt Cone)</a></p>
 <figure><img src="../fig/0_jupyter_markdown_dd.png" alt="screenshot of the Jupyter notebook dropdown to change a cell to Markdown" class="figure mx-auto d-block"><div class="figcaption">Changing a cell from Code to Markdown</div>
-</figure><div id="keypoints1" class="callout keypoints">
+</figure><p>You can also use “hotkeys”” to change Jupyter cells from Code to
+Markdown and back:</p>
+<ul><li>Click on the code cell that you want to convert to a Markdown
+cell.</li>
+<li>Press the <kbd>Esc</kbd> key to enter command mode.</li>
+<li>Press the <kbd>M</kbd> key to convert the cell to Markdown.</li>
+<li>Press the <kbd>y</kbd> key to convert the cell back to Code.</li>
+</ul></div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -704,7 +742,7 @@ Navigator.</li>
   "url": "https://librarycarpentry.github.io/lc-python-intro/instructor/getting-started.html",
   "identifier": "https://librarycarpentry.github.io/lc-python-intro/instructor/getting-started.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2024-04-11",
+  "dateModified": "2024-05-01",
   "datePublished": "2024-05-01"
 }
 

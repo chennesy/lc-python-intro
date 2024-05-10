@@ -205,23 +205,25 @@ def fahr_to_celsius(temp):
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Definition and Use
+## Create a function
 
-What does the following program print?
+Write a function called `addition` that takes two parameters and returns their sum. After defining the function, call it with several arguments and print out the results. 
 
-```python
-def report(pressure):
-    print(f'pressure is {pressure}')
-
-report(22.5)
-```
 
 :::::::::::::::  solution
 
 ## Solution
+
+```python
+def addition(x, y):
+    return x + y
+
+addition(3, 6)
+```
 
 ```output
-pressure is 22.5
+9
+
 ```
 
 :::::::::::::::::::::::::
@@ -230,203 +232,86 @@ pressure is 22.5
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Order of Operations
+## Conditional statements within functions
 
-The example above:
+Create a function called `grade_converter` that takes a numerical score (0 - 100) as its parameter and returns a letter grade based on the score:
+
+- 90 and above returns 'A'
+- 80 to 89 returns 'B'
+- 70 to 79 returns 'C'
+- 60 to 69 returns 'D'
+- Below 60 returns 'F'
+
+After defining the function, test it with a variety of scores to test it out. 
+
+:::::::::::::::  solution
+
+## Solution
 
 ```python
-result = print_date(1871, 3, 19)
-print(f'result of call is: {result}')
-```
+def grade_converter(score):
+    if score > 100 or score < 0:
+        return 'Invalid score'
+    elif score >= 90:
+        return 'A'
+    elif score >= 80:
+        return 'B'
+    elif score >= 70:
+        return 'C'
+    elif score >= 60:
+        return 'D'
+    elif score <= 59:
+        return 'F'
 
-printed:
+grade_converter(88)
+```
 
 ```output
-1871/3/19
-result of call is: None
-```
-
-Explain why the two lines of output appeared in the order they did.
-
-:::::::::::::::  solution
-
-## Solution
-
-Each line of Python code is executed in order, regardless of whether that line calls
-out to a function, which may call out to other functions, or a
-variable assignment. In this case, the second line call to `print` will not execute until
-the result of `print_date` is complete in the first line.
-
-
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Encapsulation
-
-Fill in the blanks to create a function that takes a single filename as an argument,
-loads the data in the file named by the argument,
-and returns the minimum value in that data.
-
-```python
-import pandas
-
-def min_in_data(____):
-    data = ____
-    return ____
-```
-
-:::::::::::::::  solution
-
-## Solution
-
-```python
-import pandas
-
-def min_in_data(filename):
-    data = pandas.read_csv(filename)
-    return data.min()
+'B'
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Find the First
-
-Fill in the blanks to create a function that takes a list of numbers as an argument
-and returns the first negative value in the list.
-What does your function do if the list is empty?
-
-```python
-def first_negative(values):
-    for v in ____:
-        if ____:
-            return ____
-```
-
-:::::::::::::::  solution
-
-## Solution
-
-```python
-def first_negative(values):
-    for v in values:
-        if v < 0:
-            return v
-```
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Calling by Name
+## Local and global variables
 
-What does this short program print?
-
-```python
-def print_date(year, month, day):
-    joined = f'{year}/{month}/{day}'
-    print(joined)
-
-print_date(day=1, month=2, year=2003)
-```
-
-1. When have you seen a function call like this before?
-2. When and why is it useful to call functions this way?
-
-:::::::::::::::  solution
-
-## Solution
-
-The program prints:
-
-```output
-2003/2/1
-```
-
-It is useful to call a function with named arguments to ensure that the
-values of each argument are assigned to the intended argument in the
-function. This allows the order of arguments to be specified independently
-of how they are defined in the function itself.
-
-
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Encapsulate of If/Print Block
-
-The code below will run on a label-printer for chicken eggs.  A digital scale will report a chicken egg mass (in grams) to the computer and then the computer will print a label.
-
-Please re-write the code so that the if-block is folded into a function.
+List all of the global variables and all of the local variables in the following code. 
 
 ```python
- import random
- for i in range(10):
+fine_rate = 0.25
 
-    # simulating the mass of a chicken egg
-    # the (random) mass will be 70 +/- 20 grams
-    mass=70+20.0*(2.0*random.random()-1.0)
-
-    print(mass)
-   
-    #egg sizing machinery prints a label
-    if(mass>=85):
-       print("jumbo")
-    elif(mass>=70):
-       print("large")
-    elif(mass<70 and mass>=55):
-       print("medium")
+def fine(days_overdue):
+    if days_overdue <= 10:
+        fine =  days_overdue * fine_rate
     else:
-       print("small")
-```
-
-The simplified program  follows.  What function definition will make it functional?
-
-```python
- # revised version
- import random
- for i in range(10):
-
-    # simulating the mass of a chicken egg
-    # the (random) mass will be 70 +/- 20 grams
-    mass=70+20.0*(2.0*random.random()-1.0)
-
-    print(mass,print_egg_label(mass))    
+        fine = (days_overdue * fine_rate) + (days_overdue * (fine_rate*2))
+    return fine
+    
+total_fine = calc_fine(20)
+f'Fine owed: ${total_fine:.2f}'
 
 ```
 
-1. Create a function definition for `print_egg_label()` that will work with the revised program above.  Note, the function's return value will be significant. Sample output might be `71.23 large`.
-2. A dirty egg might have a mass of more than 90 grams, and a spoiled or broken egg will probably have a mass that's less than 50 grams.  Modify your `print_egg_label()` function to account for these error conditions. Sample output could be `25 too light, probably spoiled`.
-
+```output
+'Fine owed: $15.00'
+```
 :::::::::::::::  solution
 
 ## Solution
 
-```python
-def print_egg_label(mass):
-  if(mass>=90):
-     print(mass, "dirty")
-  elif(mass>=85):
-     print(mass, "jumbo")
-  elif(mass>=70):
-     print(mass, "large")
-  elif(mass<70 and mass>=55):
-     print(mass, "medium")
-  else:
-     print(mass, "too light, probably spoiled")
-```
+Global variables:
+
+- fine_rate
+- total_fine
+
+Local variables:
+
+- days_overdue
+- fine
 
 :::::::::::::::::::::::::
 
@@ -434,130 +319,38 @@ def print_egg_label(mass):
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
-## Encapsulating Data Analysis
+## CSVs to Pandas function
+In the [Looping Data Sets episode](looping-data-sets.html#appending-dataframes-to-a-list), we learned to use glob to loop through a directory of CSV files and convert them to a Pandas DataFrame. 
 
-Assume that the following code has been executed:
+Write a function that converts a directory of CSV files into a single Pandas DataFrame. The function should accept one parameter: a string that includes the path and glob wildcard expression to point to a set of CSV files (e.g., `'data/*.csv'`). We can assume, for these purposes, that all of the DataFrames have the same column names so that you can use `pd.concat(dfs, ignore_index=True)` at the end of the function to concatenate a list of DataFrames into a single DataFrame.
 
-```python
-import pandas
-
-df = pandas.read_csv('gapminder_gdp_asia.csv', index_col=0)
-japan = df.ix['Japan']
-```
-
-1. Complete the statements below to obtain the average GDP for Japan
-  across the years reported for the 1980s.
-
-```python
-year = 1983
-gdp_decade = 'gdpPercap_' + str(year // ____)
-avg = (japan.ix[gdp_decade + ___] + japan.ix[gdp_decade + ___]) / 2
-```
-
-2. Abstract the code above into a single function.
-
-```python
-def avg_gdp_in_decade(country, continent, year):
-    df = pd.read_csv('gapminder_gdp_'+___+'.csv',delimiter=',',index_col=0)
-    ____
-    ____
-    ____
-    return avg
-```
-
-3. How would you generalize this function
-  if you did not know beforehand which specific years occurred as columns in the data?
-  For instance, what if we also had data from years ending in 1 and 9 for each decade?
-  (Hint: use the columns to filter out the ones that correspond to the decade,
-  instead of enumerating them in the code.)
-
-:::::::::::::::  solution
-
-## Solution
-
-1. 
-```python
-year = 1983
-gdp_decade = 'gdpPercap_' + str(year // 10)
-avg = (japan.ix[gdp_decade + '2'] + japan.ix[gdp_decade + '7']) / 2
-```
-
-2. 
-```python
-def avg_gdp_in_decade(country, continent, year):
-    df = pd.read_csv('gapminder_gdp_' + continent + '.csv', index_col=0)
-    c = df.ix[country]
-    gdp_decade = 'gdpPercap_' + str(year // 10)
-    avg = (c.ix[gdp_decade + '2'] + c.ix[gdp_decade + '7'])/2
-    return avg
-```
-
-3. We need to loop over the reported years
-  to obtain the average for the relevant ones in the data.
-
-```python
-def avg_gdp_in_decade(country, continent, year):
-    df = pd.read_csv('gapminder_gdp_' + continent + '.csv', index_col=0)
-    c = df.ix[country] 
-    gdp_decade = 'gdpPercap_' + str(year // 10)
-    total = 0.0
-    num_years = 0
-    for yr_header in c.index: # c's index contains reported years
-        if yr_header.startswith(gdp_decade):
-            total = total + c.ix[yr_header]
-            num_years = num_years + 1
-    return total/num_years
-```
-
-:::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-## Local and Global Variable Use
-
-Trace the values of all variables in this program as it is executed.
-(Use '---' as the value of variables before and after they exist.)
-
-```python
-limit = 100
-
-def clip(value):
-    return min(max(0.0, value), limit)
-
-value = -22.5
-print(clip(value))
-```
 
 :::::::::::::::  solution
 
 ## Solution
 
 ```python
-# limit = ---
-# value = ---
+import glob
+import pandas as pd
 
-limit = 100   
+def concat_csvs(path):
+    
+    dfs = [] 
 
-def clip(value):  
-  return min(max(0.0, value), limit)
+    for csv in sorted(glob.glob(path)):
+        data = pd.read_csv(csv)
+        dfs.append(data)
+    
+    df = pd.concat(dfs, ignore_index=True)
+    return df
 
-# limit = 100
-# value = ---
+df = concat_csvs('data/*.csv')
 
-value = -22.5    # value = -22.5, limit = 100
-
-print(clip(value))   # result is 0.0
-
-# value = -22.5
-# limit = 100
 ```
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
